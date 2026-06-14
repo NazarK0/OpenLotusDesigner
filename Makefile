@@ -1,0 +1,4 @@
+dev:
+	docker compose -f docker-compose.dev.yml up --build
+dev-stop:
+	docker compose -f docker-compose.dev.yml down

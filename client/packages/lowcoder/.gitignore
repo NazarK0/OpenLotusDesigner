@@ -1,0 +1,5 @@
+stats.html
+
+# Temporary config files Vite
+vite.config.*.timestamp-*.mjs
+# */**/vite.config.*.timestamp-*.m?js
