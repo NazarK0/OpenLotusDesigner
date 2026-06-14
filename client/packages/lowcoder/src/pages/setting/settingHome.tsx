@@ -89,55 +89,52 @@ export function SettingHome() {
       label: trans("settings.advanced"),
       icon: <LeftSettingIcon width={"20px"} />,
     },
-    {
-      key: SettingPageEnum.Environments,
-      label: (
-        <span>
-          <span className="text">{trans("settings.environments")}</span>
-          {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
-        </span>
-      ),
-      icon: <EnvironmentsIcon width={"20px"} />,
-      disabled: !currentOrgAdmin(user),
-    },
-    {
-      key: SettingPageEnum.AppUsage,
-      label: (
-        <span>
-          <span className="text">{trans("settings.appUsage")}</span>
-          {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
-        </span>
-      ),
-      icon: <UsageStatisticsIcon width={"20px"} />,
-      disabled: !currentOrgAdmin(user),
-    },
-    {
-      key: SettingPageEnum.AuditLog,
-      label: (
-        <span>
-          <span className="text">{trans("settings.audit")}</span>
-          {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
-        </span>
-      ),
-      icon: <AutitLogsIcon width={"20px"} />,
-      disabled: !currentOrgAdmin(user),
-    },
-    {
-      key: SettingPageEnum.Branding,
-      label: (
-        <span>
-          <span className="text">{trans("settings.branding")}</span>
-          {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
-        </span>
-      ),
-      icon: <BrandingIcon width={"20px"} />,
-      disabled: !currentOrgAdmin(user),
-    },
-    {
-      key: SettingPageEnum.Subscription,
-      label: trans("settings.subscription"),
-      icon: <SubscriptionIcon width={"20px"} />,
-    },
+
+    // TODO IN FUTURE: Enterprise feature of lowcoder
+    // {
+    //   key: SettingPageEnum.Environments,
+    //   label: (
+    //     <span>
+    //       <span className="text">{trans("settings.environments")}</span>
+    //       {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
+    //     </span>
+    //   ),
+    //   icon: <EnvironmentsIcon width={"20px"} />,
+    //   disabled: !currentOrgAdmin(user),
+    // },
+    // {
+    //   key: SettingPageEnum.AppUsage,
+    //   label: (
+    //     <span>
+    //       <span className="text">{trans("settings.appUsage")}</span>
+    //       {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
+    //     </span>
+    //   ),
+    //   icon: <UsageStatisticsIcon width={"20px"} />,
+    //   disabled: !currentOrgAdmin(user),
+    // },
+    // {
+    //   key: SettingPageEnum.AuditLog,
+    //   label: (
+    //     <span>
+    //       <span className="text">{trans("settings.audit")}</span>
+    //       {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
+    //     </span>
+    //   ),
+    //   icon: <AutitLogsIcon width={"20px"} />,
+    //   disabled: !currentOrgAdmin(user),
+    // },
+    // {
+    //   key: SettingPageEnum.Branding,
+    //   label: (
+    //     <span>
+    //       <span className="text">{trans("settings.branding")}</span>
+    //       {!isLicenseActive && <FreeLimitTag text={trans("settings.premium")} />}
+    //     </span>
+    //   ),
+    //   icon: <BrandingIcon width={"20px"} />,
+    //   disabled: !currentOrgAdmin(user),
+    // },
   ];
 
   return (
@@ -159,39 +156,6 @@ export function SettingHome() {
             }}
             items={items}
           />
-
-          {!isLicenseActive && (
-            <Card style={{ marginTop: "40px", color: "#aaa" }}>
-              <div style={{ marginBottom: 12 }}>
-                {trans("enterprise.premiumFeaturesNotice")}
-              </div>
-              <Button
-                type="primary"
-                style={{ backgroundColor: "#ff6f3c", borderColor: "#ff6f3c" }}
-                onClick={() => setHubspotVisible(true)}
-              >
-                {trans("enterprise.requestLicensesBtton")}
-              </Button>
-
-              <div style={{ margin: "12px 0" }}>
-                {trans("enterprise.readMoreNotice")}
-              </div>
-
-              <Button
-                type="default"
-                onClick={() =>
-                  window.open(
-                    "https://docs.lowcoder.cloud/lowcoder-documentation/setup-and-run/lowcoder-enterprise-edition",
-                    "_blank",
-                    "noopener"
-                  )
-                }
-              >
-                {trans("enterprise.readMoreButton")}
-              </Button>
-
-            </Card>
-          )}
         </SubSideBar>
 
         {selectKey === SettingPageEnum.Organization && <Organization />}
@@ -199,11 +163,10 @@ export function SettingHome() {
         {selectKey === SettingPageEnum.UserGroups && <PermissionSetting />}
         {selectKey === SettingPageEnum.Theme && <ThemeHome />}
         {selectKey === SettingPageEnum.Advanced && <AdvancedSetting />}
-        {selectKey === SettingPageEnum.Environments && <Environments />}
+        {/* {selectKey === SettingPageEnum.Environments && <Environments />}
         {selectKey === SettingPageEnum.AppUsage && <AppUsage />}
         {selectKey === SettingPageEnum.AuditLog && <AuditLog />}
-        {selectKey === SettingPageEnum.Branding && <Branding />}
-        {selectKey === SettingPageEnum.Subscription && <Subscription />}
+        {selectKey === SettingPageEnum.Branding && <Branding />} */}
       </TwoColumnSettingPageContent>
 
       <HubspotModal

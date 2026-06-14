@@ -1,3 +1,4 @@
+// TODO IN FUTURE: Enterprise feature of lowcoder
 import { useSelector, useDispatch } from "react-redux";
 import { selectIsLicenseActive } from "redux/selectors/enterpriseSelectors";
 import { BrandingSetting } from "./BrandingSetting";
