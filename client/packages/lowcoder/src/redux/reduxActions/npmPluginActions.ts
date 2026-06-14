@@ -1,5 +1,5 @@
-import { ReduxActionTypes } from "constants/reduxActionConstants";
-import { NpmPackageMeta } from "types/remoteComp";
+import { ReduxActionTypes } from 'constants/reduxActionConstants';
+import { NpmPackageMeta } from 'types/remoteComp';
 
 export const packageMetaReadyAction = (packageName: string, meta: NpmPackageMeta) => ({
   type: ReduxActionTypes.PACKAGE_META_READY,
@@ -16,7 +16,7 @@ export const selectNpmPluginVersionAction = (packageName: string, version: strin
 });
 
 export const setLowcoderCompsLoading = (loading: boolean) => ({
-  type: ReduxActionTypes.LOWCODER_COMPS_LOADING,
+  type: ReduxActionTypes.OPENLOTUS_COMPS_LOADING,
   payload: {
     loading,
   },

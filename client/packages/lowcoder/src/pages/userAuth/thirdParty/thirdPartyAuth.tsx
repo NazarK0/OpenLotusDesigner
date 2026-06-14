@@ -98,7 +98,7 @@ function ThirdPartyLoginButton(props: {
       {config.icon && <MultiIconDisplay identifier={config.icon} width="20px" height="20px" style={{ marginRight: "20px", flexShrink: 0, color: "#000" }} />}
       {!config.icon && <LoginLogoStyle alt={config.name} src={config.logo} title={config.name} />}
       <LoginLabelStyle className="auth-label">
-        { buttonLabel }
+        {buttonLabel}
       </LoginLabelStyle>
     </StyledLoginButton>
   );
@@ -118,13 +118,13 @@ export function ThirdPartyAuth(props: {
   const [disableButtons, setDisableButtons] = useState(false);
 
   const isEmailLoginEnabled = useMemo(() => {
-    return isFormLoginEnabled && serverSettings.LOWCODER_EMAIL_AUTH_ENABLED === 'true';
+    return isFormLoginEnabled && serverSettings.OPENLOTUS_EMAIL_AUTH_ENABLED === 'true';
   }, [isFormLoginEnabled, serverSettings]);
 
   const isEmailSignupEnabled = useMemo(() => {
-    return serverSettings.LOWCODER_EMAIL_SIGNUP_ENABLED === 'true';
+    return serverSettings.OPENLOTUS_EMAIL_SIGNUP_ENABLED === 'true';
   }, [serverSettings]);
-  
+
   if (systemConfigFetching) {
     return <Spin indicator={<LoadingOutlined style={{ fontSize: 15, marginTop: '16px' }} spin />} />;
   }
@@ -153,14 +153,14 @@ export function ThirdPartyAuth(props: {
   });
   return (
     <ThirdPartyLoginButtonWrapper>
-      { (
+      {(
         (isEmailLoginEnabled && props.authGoal === 'login')
         || (isEmailLoginEnabled && isEmailSignupEnabled && props.authGoal === 'register')
       ) && Boolean(socialLoginButtons.length) && (
-        <Divider plain>
-          <Text type="secondary">or</Text>
-        </Divider>
-      )}
+          <Divider plain>
+            <Text type="secondary">or</Text>
+          </Divider>
+        )}
       {socialLoginButtons}
       {!isFormLoginEnabled && (
         <TermsAndPrivacyInfo onCheckChange={(e) => setDisableButtons(!e.target.checked)} />

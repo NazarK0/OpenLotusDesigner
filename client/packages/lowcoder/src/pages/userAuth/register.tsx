@@ -59,7 +59,7 @@ function UserRegister() {
   const [lastEmailChecked, setLastEmailChecked] = useState("");
   const [signupEnabled, setSignupEnabled] = useState<boolean>(true);
   const [signinEnabled, setSigninEnabled] = useState<boolean>(true);
-  const [defaultOrgId, setDefaultOrgId] = useState<string|undefined>();
+  const [defaultOrgId, setDefaultOrgId] = useState<string | undefined>();
   const redirectUrl = useRedirectUrl();
   const serverSettings = useSelector(getServerSettings);
   const { systemConfig, inviteInfo, fetchUserAfterAuthSuccess } = useContext(AuthContext);
@@ -70,31 +70,31 @@ function UserRegister() {
   const orgId = useParams<any>().orgId;
 
   const organizationId = useMemo(() => {
-    if(inviteInfo?.invitedOrganizationId) {
+    if (inviteInfo?.invitedOrganizationId) {
       return inviteInfo?.invitedOrganizationId;
     }
     if (orgId) {
       return orgId;
     }
     return defaultOrgId;
-  }, [ inviteInfo, orgId, defaultOrgId ]);
+  }, [inviteInfo, orgId, defaultOrgId]);
 
   const isEmailLoginEnabled = useMemo(() => {
     return isFormLoginEnabled && signinEnabled;
   }, [isFormLoginEnabled, signinEnabled]);
 
   const isEnterpriseMode = useMemo(() => {
-    return serverSettings?.LOWCODER_WORKSPACE_MODE === "ENTERPRISE" || serverSettings?.LOWCODER_WORKSPACE_MODE === "SINGLEWORKSPACE";
+    return serverSettings?.OPENLOTUS_WORKSPACE_MODE === "ENTERPRISE" || serverSettings?.OPENLOTUS_WORKSPACE_MODE === "SINGLEWORKSPACE";
   }, [serverSettings]);
 
   useEffect(() => {
     const {
-      LOWCODER_EMAIL_SIGNUP_ENABLED,
-      LOWCODER_EMAIL_AUTH_ENABLED,
+      OPENLOTUS_EMAIL_SIGNUP_ENABLED,
+      OPENLOTUS_EMAIL_AUTH_ENABLED,
     } = serverSettings;
 
-    setSignupEnabled(LOWCODER_EMAIL_SIGNUP_ENABLED === 'true');
-    setSigninEnabled(LOWCODER_EMAIL_AUTH_ENABLED === 'true');
+    setSignupEnabled(OPENLOTUS_EMAIL_SIGNUP_ENABLED === 'true');
+    setSigninEnabled(OPENLOTUS_EMAIL_AUTH_ENABLED === 'true');
   }, [serverSettings]);
 
   const fetchOrgsByEmail = () => {
@@ -103,17 +103,17 @@ function UserRegister() {
       pageNum: 1,
       pageSize: 10,
     })
-    .then((resp) => {
-      if (resp.success) {
-        const orgList = resp.data || [];
-        if (orgList.length) {
-          // in Enterprise mode, we will get org data in different format
-          const selectedOrgId = orgList[0]?.id || orgList[0]?.orgId;
-          setDefaultOrgId(selectedOrgId);
-          dispatch(fetchConfigAction(selectedOrgId));
+      .then((resp) => {
+        if (resp.success) {
+          const orgList = resp.data || [];
+          if (orgList.length) {
+            // in Enterprise mode, we will get org data in different format
+            const selectedOrgId = orgList[0]?.id || orgList[0]?.orgId;
+            setDefaultOrgId(selectedOrgId);
+            dispatch(fetchConfigAction(selectedOrgId));
+          }
         }
-      }
-    })
+      })
   }
 
   useEffect(() => {
@@ -123,18 +123,18 @@ function UserRegister() {
   }, [isEnterpriseMode]);
 
   useEffect(() => {
-    const { LOWCODER_EMAIL_SIGNUP_ENABLED } = serverSettings;
-    if(
-      serverSettings.hasOwnProperty('LOWCODER_EMAIL_SIGNUP_ENABLED')
-      && LOWCODER_EMAIL_SIGNUP_ENABLED === 'false'
+    const { OPENLOTUS_EMAIL_SIGNUP_ENABLED } = serverSettings;
+    if (
+      serverSettings.hasOwnProperty('OPENLOTUS_EMAIL_SIGNUP_ENABLED')
+      && OPENLOTUS_EMAIL_SIGNUP_ENABLED === 'false'
     ) {
       history.push(
         AUTH_LOGIN_URL,
-        {...location.state || {}, email: account},
+        { ...location.state || {}, email: account },
       )
     };
   }, [serverSettings]);
-  
+
   const afterLoginSuccess = () => {
     // used invitation link or organization login url then set cookie
     if (organizationId && !isEnterpriseMode) {
@@ -171,7 +171,7 @@ function UserRegister() {
             messageInstance.error('Email is already registered');
             history.push(
               AUTH_LOGIN_URL,
-              {...location.state || {}, email: account},
+              { ...location.state || {}, email: account },
             )
           }
         }
@@ -194,7 +194,7 @@ function UserRegister() {
         isEE={isEnterpriseActive}
       >
         <RegisterContent>
-          { isEmailLoginEnabled && (
+          {isEmailLoginEnabled && (
             <>
               <StyledFormInput
                 className="form-input"
@@ -210,8 +210,8 @@ function UserRegister() {
               />
               <StyledPasswordInput
                 className="form-input"
-                passInputConf={{label:trans("password.label"), placeholder: trans("password.placeholder")}}
-                confirmPassConf={{label:trans("password.conformLabel"), placeholder: trans("password.conformPlaceholder")}}
+                passInputConf={{ label: trans("password.label"), placeholder: trans("password.placeholder") }}
+                confirmPassConf={{ label: trans("password.conformLabel"), placeholder: trans("password.conformPlaceholder") }}
                 valueCheck={checkPassWithMsg}
                 onChange={(value, valid) => setPassword(valid ? value : "")}
                 doubleCheck
@@ -236,7 +236,7 @@ function UserRegister() {
         </RegisterContent>
         {isEmailLoginEnabled && (
           <>
-            <Divider/>
+            <Divider />
             <StyledRouteLinkLogin to={{
               pathname: orgId
                 ? ORG_AUTH_LOGIN_URL.replace(':orgId', orgId)

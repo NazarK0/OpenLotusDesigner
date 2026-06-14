@@ -2,9 +2,9 @@
 
 set -e
 
-export USER_ID=${LOWCODER_PUID:=9001}
-export GROUP_ID=${LOWCODER_PGID:=9001}
-export API_HOST="${LOWCODER_API_SERVICE_URL:=http://localhost:8080}"
+export USER_ID=${OPENLOTUS_PUID:=9001}
+export GROUP_ID=${OPENLOTUS_PGID:=9001}
+export API_HOST="${OPENLOTUS_API_SERVICE_URL:=http://localhost:8080}"
 
 # Run init script
 echo "Initializing node-service..."

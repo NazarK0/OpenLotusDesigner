@@ -474,7 +474,7 @@ public class BundleApiServiceImpl implements BundleApiService {
             return Mono.empty();
         }
 
-        // Falk: here is to check the ENV Variable LOWCODER_MARKETPLACE_PRIVATE_MODE
+        // Falk: here is to check the ENV Variable OPENLOTUS_MARKETPLACE_PRIVATE_MODE
         // isPublicToMarketplace & isPublicToAll must be both true
         if (expected == BundleRequestType.PUBLIC_TO_MARKETPLACE && bundle.getPublicToMarketplace() && bundle.getPublicToAll()) {
             return Mono.empty();

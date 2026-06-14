@@ -235,7 +235,7 @@ public class ApplicationApiServiceImpl implements ApplicationApiService {
             return Mono.empty();
         }
 
-        // Falk: here is to check the ENV Variable LOWCODER_MARKETPLACE_PRIVATE_MODE
+        // Falk: here is to check the ENV Variable OPENLOTUS_MARKETPLACE_PRIVATE_MODE
         // isPublicToMarketplace & isPublicToAll must be both true
         if (expected == ApplicationRequestType.PUBLIC_TO_MARKETPLACE && application.isPublicToMarketplace() && application.isPublicToAll()) {
             return Mono.empty();

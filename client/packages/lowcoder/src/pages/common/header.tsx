@@ -1,8 +1,8 @@
 import { default as Dropdown } from "antd/es/dropdown";
 import { default as Skeleton } from "antd/es/skeleton";
 import { default as Radio, RadioChangeEvent } from "antd/es/radio";
-import { default as Statistic} from "antd/es/statistic";
-import { default as Flex} from "antd/es/flex";
+import { default as Statistic } from "antd/es/statistic";
+import { default as Flex } from "antd/es/flex";
 import { default as Popover } from "antd/es/popover";
 import { default as Typography } from "antd/es/typography";
 import LayoutHeader from "components/layout/Header";
@@ -106,7 +106,7 @@ const LayoutIcon = styled(Layout)`
 const LeftIcon = styled(Left)`
   ${IconCss}
 `;
-const MiddleIcon = styled(Middle)<{ $show: boolean }>`
+const MiddleIcon = styled(Middle) <{ $show: boolean }>`
   ${IconCss}
   & g line {
     stroke: ${(props) => (props.$show ? "#dddddd" : "#dddddd65")};
@@ -321,9 +321,9 @@ const StyledRefreshIcon = styled(RefreshIcon)`
 const DropdownMenuStyled = styled(DropdownMenu)`
   .ant-dropdown-menu-item:hover {
     background: ${(props) =>
-      props.disabled ? 'inherit' : '#edf4fa'};
+    props.disabled ? 'inherit' : '#edf4fa'};
     cursor: ${(props) =>
-      props.disabled ? 'not-allowed' : 'pointer'};
+    props.disabled ? 'not-allowed' : 'pointer'};
   }
 `;
 
@@ -383,7 +383,7 @@ export default function Header(props: HeaderProps) {
   const applicationId = useApplicationId();
   const dispatch = useDispatch();
   const showAppSnapshot = useSelector(showAppSnapshotSelector);
-  const {selectedSnapshot, isArchivedSnapshot} = useSelector(getSelectedAppSnapshot);
+  const { selectedSnapshot, isArchivedSnapshot } = useSelector(getSelectedAppSnapshot);
   const brandingSettings = useSelector(getBrandingSetting);
   const { appType } = useContext(ExternalEditorContext);
   const [editName, setEditName] = useState(false);
@@ -396,7 +396,7 @@ export default function Header(props: HeaderProps) {
   const isModule = appType === AppTypeEnum.Module;
 
   useEffect(() => {
-    if(blockEditing && application && Boolean(application?.editingUserId)) {
+    if (blockEditing && application && Boolean(application?.editingUserId)) {
       UserApi.getUserDetail(application.editingUserId!)
         .then(resp => {
           if (validateResponse(resp)) {
@@ -438,12 +438,12 @@ export default function Header(props: HeaderProps) {
   const headerStart = (
     <>
       <StyledLink onClick={() => history.push(ALL_APPLICATIONS_URL)}>
-        {/* {REACT_APP_LOWCODER_SHOW_BRAND === 'true' ? REACT_APP_LOWCODER_CUSTOM_LOGO_SQUARE !== "" ? <img src={REACT_APP_LOWCODER_CUSTOM_LOGO_SQUARE } height={24} width={24} alt="logo" /> :<LogoIcon /> :  <LogoHome />} */}
-        { brandingSettings?.config_set?.logo
+        {/* {REACT_APP_OPENLOTUS_SHOW_BRAND === 'true' ? REACT_APP_OPENLOTUS_CUSTOM_LOGO_SQUARE !== "" ? <img src={REACT_APP_OPENLOTUS_CUSTOM_LOGO_SQUARE } height={24} width={24} alt="logo" /> :<LogoIcon /> :  <LogoHome />} */}
+        {brandingSettings?.config_set?.logo
           ? (
             Boolean(brandingSettings?.orgId)
-            ? <BrandLogo src={buildMaterialPreviewURL(brandingSettings?.config_set?.logo)} />
-            : <BrandLogo src={brandingSettings?.config_set?.logo} />
+              ? <BrandLogo src={buildMaterialPreviewURL(brandingSettings?.config_set?.logo)} />
+              : <BrandLogo src={brandingSettings?.config_set?.logo} />
           ) : <LogoHome />
         }
       </StyledLink>
@@ -555,52 +555,52 @@ export default function Header(props: HeaderProps) {
         {/* Display a hint about who is editing the app */}
         {blockEditing && Boolean(applicationId) && (
           <>
-          <Popover
-            style={{ width: 200 }}
-            content={() => {
-              return (
-                <Flex vertical gap={10} align="center" style={{maxWidth : "250px"}}>
-                  <Text style={{textAlign : "center"}}> 
-                    {trans("header.AppEditingBlockedHint")}
-                  </Text>
-                  <StyledCountdown
-                    title={trans("header.AppEditingBlocked")}
-                    value={editingCountdown.current}
-                    onFinish={() => {
-                      setEnableCheckEditingStatus(true)
-                    }}
-                  />
-                  <Tooltip
-                    title={trans("header.AppEditingBlockedMessage")}
-                    placement="bottom"
-                  >
-                    <TacoButton
-                      style={{width: '100%'}}
-                      buttonType="primary"
-                      disabled={blockEditing && !enableCheckEditingStatus}
-                      onClick={() => {
-                        fetchApplication?.();
-                        setEnableCheckEditingStatus(false);
-                        editingCountdown.current = setCountdown();
+            <Popover
+              style={{ width: 200 }}
+              content={() => {
+                return (
+                  <Flex vertical gap={10} align="center" style={{ maxWidth: "250px" }}>
+                    <Text style={{ textAlign: "center" }}>
+                      {trans("header.AppEditingBlockedHint")}
+                    </Text>
+                    <StyledCountdown
+                      title={trans("header.AppEditingBlocked")}
+                      value={editingCountdown.current}
+                      onFinish={() => {
+                        setEnableCheckEditingStatus(true)
                       }}
+                    />
+                    <Tooltip
+                      title={trans("header.AppEditingBlockedMessage")}
+                      placement="bottom"
                     >
-                      <StyledRefreshIcon />
-                      <span>{trans("header.AppEditingBlockedCheckStatus")}</span>
-                    </TacoButton>
-                  </Tooltip>
-                </Flex>
-              )
-            }}
-            trigger="hover"
-          >
-            <EditingNoticeWrapper>
-              <ProfileImage source={user.avatarUrl} userName={user.username} side={24} />
-              <EditingHintText>
-                {`${editingUser?.email || trans("header.AppEditingBlockedSomeone")}` + " " + trans("header.AppEditingBlockedMessageSnipped")}
-              </EditingHintText>
-              <WarningIcon />
-            </EditingNoticeWrapper>
-          </Popover>
+                      <TacoButton
+                        style={{ width: '100%' }}
+                        buttonType="primary"
+                        disabled={blockEditing && !enableCheckEditingStatus}
+                        onClick={() => {
+                          fetchApplication?.();
+                          setEnableCheckEditingStatus(false);
+                          editingCountdown.current = setCountdown();
+                        }}
+                      >
+                        <StyledRefreshIcon />
+                        <span>{trans("header.AppEditingBlockedCheckStatus")}</span>
+                      </TacoButton>
+                    </Tooltip>
+                  </Flex>
+                )
+              }}
+              trigger="hover"
+            >
+              <EditingNoticeWrapper>
+                <ProfileImage source={user.avatarUrl} userName={user.username} side={24} />
+                <EditingHintText>
+                  {`${editingUser?.email || trans("header.AppEditingBlockedSomeone")}` + " " + trans("header.AppEditingBlockedMessageSnipped")}
+                </EditingHintText>
+                <WarningIcon />
+              </EditingNoticeWrapper>
+            </Popover>
           </>
         )}
 
@@ -698,36 +698,36 @@ export function AppHeader() {
 
   const headerStart = (
     <StyledLink onClick={() => history.push(ALL_APPLICATIONS_URL)}>
-      {/* {REACT_APP_LOWCODER_SHOW_BRAND === 'true' ?  REACT_APP_LOWCODER_CUSTOM_LOGO !== "" ? <img src={REACT_APP_LOWCODER_CUSTOM_LOGO}  height={28} alt="logo" /> :<LogoWithName branding={!user.orgDev} /> : <LogoHome />} */}
-      { brandingSettings?.config_set?.logo
+      {/* {REACT_APP_OPENLOTUS_SHOW_BRAND === 'true' ?  REACT_APP_OPENLOTUS_CUSTOM_LOGO !== "" ? <img src={REACT_APP_OPENLOTUS_CUSTOM_LOGO}  height={28} alt="logo" /> :<LogoWithName branding={!user.orgDev} /> : <LogoHome />} */}
+      {brandingSettings?.config_set?.logo
         ? (
           Boolean(brandingSettings?.orgId)
-          ? <BrandLogo src={buildMaterialPreviewURL(brandingSettings?.config_set?.logo)} />
-          : <BrandLogo src={brandingSettings?.config_set?.logo} />
+            ? <BrandLogo src={buildMaterialPreviewURL(brandingSettings?.config_set?.logo)} />
+            : <BrandLogo src={brandingSettings?.config_set?.logo} />
         ) : <LogoHome />
       }
     </StyledLink>
   );
   const headerEnd = (
     <Row align="middle" gutter={32}>
-      <Col style={{marginTop : "6px"}}>
-      {user.orgDev && ( 
-        <GitHubButton
-          href="https://github.com/lowcoder-org/lowcoder"
-          data-color-scheme="no-preference: light; light: light; dark: dark;"
-          data-size="small"
-          data-show-count="true"
-          aria-label="Star lowcoder-org/lowcoder on GitHub"
-        >
-          Star
-        </GitHubButton>
-      )}
+      <Col style={{ marginTop: "6px" }}>
+        {user.orgDev && (
+          <GitHubButton
+            href="https://github.com/lowcoder-org/lowcoder"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-size="small"
+            data-show-count="true"
+            aria-label="Star lowcoder-org/lowcoder on GitHub"
+          >
+            Star
+          </GitHubButton>
+        )}
       </Col>
       <Col>
         <HeaderProfile user={user} />
       </Col>
     </Row>
-  );  
+  );
   return (
     <LayoutHeader
       headerStart={headerStart}

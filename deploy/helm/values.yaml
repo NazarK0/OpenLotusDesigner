@@ -28,8 +28,8 @@ global:
     superuser:
       username: admin@localhost
       password:
-    #nodeServiceUrl: 
-    #apiServiceUrl: 
+    #nodeServiceUrl:
+    #apiServiceUrl:
     apiKeySecret: "5a41b090758b39b226603177ef48d73ae9839dd458ccb7e66f7e7cc028d5a50b"
     nodeServiceSecret: "62e348319ab9f5c43c3b5a380b4d82525cdb68740f21140e767989b509ab0aa2"
     nodeServiceSalt: "lowcoder.org"
@@ -38,7 +38,7 @@ global:
     snapshotRetentionTime: 30
     marketplacePrivateMode: true
   cookie:
-    name: LOWCODER_CE_SELFHOST_TOKEN
+    name: OPENLOTUS_CE_SELFHOST_TOKEN
     maxAge: 24
   defaults:
     maxOrgsPerUser: 100
@@ -71,12 +71,12 @@ global:
 # Find out more about configuration options at: https://github.com/bitnami/charts/tree/main/bitnami/redis/#parameters
 #
 redis:
-  #externalUrl: 
+  #externalUrl:
   enabled: true
   architecture: standalone
   auth:
     enabled: false
-    #password: 
+    #password:
 
 # Mongo database
 #
@@ -153,7 +153,7 @@ nodeService:
     maxReplicas: 100
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
- 
+
 # Lowcoder frontend
 frontend:
   image:
@@ -174,7 +174,7 @@ frontend:
     maxReplicas: 100
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
- 
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
@@ -197,7 +197,6 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
-
 ingress:
   enabled: false
   className: ""
@@ -213,7 +212,6 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
 
 nodeSelector: {}
 

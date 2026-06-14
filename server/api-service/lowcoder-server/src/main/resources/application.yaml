@@ -1,19 +1,19 @@
 auth:
   api-key:
-    secret: ${LOWCODER_API_KEY_SECRET:5a41b090758b39b226603177ef48d73ae9839dd458ccb7e66f7e7cc028d5a50b}
+    secret: ${OPENLOTUS_API_KEY_SECRET:5a41b090758b39b226603177ef48d73ae9839dd458ccb7e66f7e7cc028d5a50b}
   email:
-    enable: ${LOWCODER_EMAIL_AUTH_ENABLED:true}
-    enable-register: ${LOWCODER_EMAIL_SIGNUP_ENABLED:true}
-  workspace-creation: ${LOWCODER_CREATE_WORKSPACE_ON_SIGNUP:true}
+    enable: ${OPENLOTUS_EMAIL_AUTH_ENABLED:true}
+    enable-register: ${OPENLOTUS_EMAIL_SIGNUP_ENABLED:true}
+  workspace-creation: ${OPENLOTUS_CREATE_WORKSPACE_ON_SIGNUP:true}
 
 spring:
   data:
     mongodb:
       authentication-database: admin
       auto-index-creation: false
-      uri: ${LOWCODER_MONGODB_URL:mongodb://lowcoder:secret123@mongodb:27017/lowcoder?retryWrites=true&loadBalanced=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256}
+      uri: ${OPENLOTUS_MONGODB_URL:mongodb://lowcoder:secret123@mongodb:27017/lowcoder?retryWrites=true&loadBalanced=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256}
     redis:
-      url: ${LOWCODER_REDIS_URL:redis://redis:6379}
+      url: ${OPENLOTUS_REDIS_URL:redis://redis:6379}
   main:
     allow-bean-definition-overriding: false
     allow-circular-references: false
@@ -22,20 +22,20 @@ spring:
   webflux:
     base-path: /
   mail:
-    host: ${LOWCODER_ADMIN_SMTP_HOST:localhost}
-    port: ${LOWCODER_ADMIN_SMTP_PORT:587}
-    username: ${LOWCODER_ADMIN_SMTP_USERNAME:info@localhost}
-    password: ${LOWCODER_ADMIN_SMTP_PASSWORD:s3cr3t}
+    host: ${OPENLOTUS_ADMIN_SMTP_HOST:localhost}
+    port: ${OPENLOTUS_ADMIN_SMTP_PORT:587}
+    username: ${OPENLOTUS_ADMIN_SMTP_USERNAME:info@localhost}
+    password: ${OPENLOTUS_ADMIN_SMTP_PASSWORD:s3cr3t}
     properties:
       mail:
         smtp:
-          auth: ${LOWCODER_ADMIN_SMTP_AUTH:true}
+          auth: ${OPENLOTUS_ADMIN_SMTP_AUTH:true}
           ssl:
-            enable: ${LOWCODER_ADMIN_SMTP_SSL_ENABLED:false}
+            enable: ${OPENLOTUS_ADMIN_SMTP_SSL_ENABLED:false}
             checkserveridentity: false
           starttls:
-            enable: ${LOWCODER_ADMIN_SMTP_STARTTLS_ENABLED:true}
-            required: ${LOWCODER_ADMIN_SMTP_STARTTLS_REQUIRED:true}
+            enable: ${OPENLOTUS_ADMIN_SMTP_STARTTLS_ENABLED:true}
+            required: ${OPENLOTUS_ADMIN_SMTP_STARTTLS_REQUIRED:true}
         transport:
           protocol: smtp
   mvc:
@@ -51,16 +51,16 @@ server:
   shutdown: graceful
 
 default:
-  orgs-per-user: ${LOWCODER_MAX_ORGS_PER_USER:100}
-  org-member-count: ${LOWCODER_MAX_MEMBERS_PER_ORG:1000}
-  org-group-count: ${LOWCODER_MAX_GROUPS_PER_ORG:100}
-  org-app-count: ${LOWCODER_MAX_APPS_PER_ORG:1000}
-  developer-count: ${LOWCODER_MAX_DEVELOPERS:50}
-  api-rate-limit: ${LOWCODER_API_RATE_LIMIT:50}
-  query-timeout: ${LOWCODER_DEFAULT_QUERY_TIMEOUT:10}
+  orgs-per-user: ${OPENLOTUS_MAX_ORGS_PER_USER:100}
+  org-member-count: ${OPENLOTUS_MAX_MEMBERS_PER_ORG:1000}
+  org-group-count: ${OPENLOTUS_MAX_GROUPS_PER_ORG:100}
+  org-app-count: ${OPENLOTUS_MAX_APPS_PER_ORG:1000}
+  developer-count: ${OPENLOTUS_MAX_DEVELOPERS:50}
+  api-rate-limit: ${OPENLOTUS_API_RATE_LIMIT:50}
+  query-timeout: ${OPENLOTUS_DEFAULT_QUERY_TIMEOUT:10}
 
 common:
-  cookie-name: ${LOWCODER_COOKIE_NAME:LOWCODER_CE_SELFHOST_TOKEN}
+  cookie-name: ${OPENLOTUS_COOKIE_NAME:OPENLOTUS_CE_SELFHOST_TOKEN}
   product: lowcoder
   domain:
     default-value: lowcoder.org
@@ -69,33 +69,33 @@ common:
   apiVersion: 1.2
   block-hound-enable: false
   encrypt:
-    password: ${LOWCODER_DB_ENCRYPTION_PASSWORD:lowcoder.org}
-    salt: ${LOWCODER_DB_ENCRYPTION_SALT:lowcoder.org}
+    password: ${OPENLOTUS_DB_ENCRYPTION_PASSWORD:lowcoder.org}
+    salt: ${OPENLOTUS_DB_ENCRYPTION_SALT:lowcoder.org}
   security:
-    corsAllowedDomainString: ${LOWCODER_CORS_DOMAINS:*}
+    corsAllowedDomainString: ${OPENLOTUS_CORS_DOMAINS:*}
   js-executor:
-    host: ${LOWCODER_NODE_SERVICE_URL:http://node-service:6060}
-    password: ${LOWCODER_NODE_SERVICE_SECRET:}
-    salt: ${LOWCODER_NODE_SERVICE_SECRET_SALT:}
-  max-query-request-size: ${LOWCODER_MAX_REQUEST_SIZE:20m}
-  max-query-response-size: ${LOWCODER_MAX_REQUEST_SIZE:20m}
-  max-upload-size: ${LOWCODER_MAX_REQUEST_SIZE:20m}
-  max-query-timeout: ${LOWCODER_MAX_QUERY_TIMEOUT:120}
+    host: ${OPENLOTUS_NODE_SERVICE_URL:http://node-service:6060}
+    password: ${OPENLOTUS_NODE_SERVICE_SECRET:}
+    salt: ${OPENLOTUS_NODE_SERVICE_SECRET_SALT:}
+  max-query-request-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
+  max-query-response-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
+  max-upload-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
+  max-query-timeout: ${OPENLOTUS_MAX_QUERY_TIMEOUT:120}
   workspace:
-    mode: ${LOWCODER_WORKSPACE_MODE:SAAS}
+    mode: ${OPENLOTUS_WORKSPACE_MODE:SAAS}
   plugin-dirs:
-    - ${LOWCODER_PLUGINS_DIR:../plugins}
+    - ${OPENLOTUS_PLUGINS_DIR:../plugins}
   super-admin:
-    username: ${LOWCODER_SUPERUSER_USERNAME:admin@localhost}
-    password: ${LOWCODER_SUPERUSER_PASSWORD:}
+    username: ${OPENLOTUS_SUPERUSER_USERNAME:admin@localhost}
+    password: ${OPENLOTUS_SUPERUSER_PASSWORD:}
   marketplace:
-    private-mode: ${LOWCODER_MARKETPLACE_PRIVATE_MODE:true}
-  lowcoder-public-url: ${LOWCODER_PUBLIC_URL:http://frontend:3000}
-  notifications-email-sender: ${LOWCODER_EMAIL_NOTIFICATIONS_SENDER:info@localhost}
+    private-mode: ${OPENLOTUS_MARKETPLACE_PRIVATE_MODE:true}
+  lowcoder-public-url: ${OPENLOTUS_PUBLIC_URL:http://frontend:3000}
+  notifications-email-sender: ${OPENLOTUS_EMAIL_NOTIFICATIONS_SENDER:info@localhost}
   cookie:
-    max-age-in-hours: ${LOWCODER_COOKIE_MAX_AGE:24}
+    max-age-in-hours: ${OPENLOTUS_COOKIE_MAX_AGE:24}
   query:
-    app-snapshot-keep-duration: ${LOWCODER_APP_SNAPSHOT_RETENTIONTIME:30}
+    app-snapshot-keep-duration: ${OPENLOTUS_APP_SNAPSHOT_RETENTIONTIME:30}
 
 material:
   mongodb-grid-fs:

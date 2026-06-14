@@ -24,22 +24,22 @@ public class ServerSettingServiceImpl implements ServerSettingService {
     private final Environment environment;
     private final ServerSettingRepository repository;
 
-    private final List<String> EXCLUDED_KEYS = List.of("LOWCODER_MONGODB_EXPOSED",
-    "LOWCODER_PUID",
-    "LOWCODER_PGID",
-    "LOWCODER_MONGODB_URL",
-    "LOWCODER_REDIS_URL",
-    "LOWCODER_DB_ENCRYPTION_PASSWORD",
-    "LOWCODER_DB_ENCRYPTION_SALT",
-    "LOWCODER_API_KEY_SECRET",
-    "LOWCODER_ADMIN_SMTP_HOST",
-    "LOWCODER_ADMIN_SMTP_PORT",
-    "LOWCODER_ADMIN_SMTP_USERNAME",
-    "LOWCODER_ADMIN_SMTP_PASSWORD",
-    "LOWCODER_SUPERUSER_PASSWORD",
-    "LOWCODER_SUPERUSER_USERNAME",
-    "LOWCODER_NODE_SERVICE_SECRET",
-    "LOWCODER_NODE_SERVICE_SECRET_SALT");
+    private final List<String> EXCLUDED_KEYS = List.of("OPENLOTUS_MONGODB_EXPOSED",
+    "OPENLOTUS_PUID",
+    "OPENLOTUS_PGID",
+    "OPENLOTUS_MONGODB_URL",
+    "OPENLOTUS_REDIS_URL",
+    "OPENLOTUS_DB_ENCRYPTION_PASSWORD",
+    "OPENLOTUS_DB_ENCRYPTION_SALT",
+    "OPENLOTUS_API_KEY_SECRET",
+    "OPENLOTUS_ADMIN_SMTP_HOST",
+    "OPENLOTUS_ADMIN_SMTP_PORT",
+    "OPENLOTUS_ADMIN_SMTP_USERNAME",
+    "OPENLOTUS_ADMIN_SMTP_PASSWORD",
+    "OPENLOTUS_SUPERUSER_PASSWORD",
+    "OPENLOTUS_SUPERUSER_USERNAME",
+    "OPENLOTUS_NODE_SERVICE_SECRET",
+    "OPENLOTUS_NODE_SERVICE_SECRET_SALT");
 
     @Override
     public Mono<Map<String, String>> getServerSettingsMap() {
@@ -52,7 +52,7 @@ public class ServerSettingServiceImpl implements ServerSettingService {
         Map<String, String> defaults = getEnvironmentVariablesDefaults();
 
         Map<String, String> envVariables = new TreeMap<>(System.getenv().entrySet().stream()
-                .filter(entry -> StringUtils.startsWith(entry.getKey(), "LOWCODER_"))
+                .filter(entry -> StringUtils.startsWith(entry.getKey(), "OPENLOTUS_"))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
 
         Map<String, String> merged = new TreeMap<>(defaults);
@@ -87,7 +87,7 @@ public class ServerSettingServiceImpl implements ServerSettingService {
                 if (names.length > 0) {
                     Arrays.stream(names).forEach(name -> {
                         String rawValue = Objects.toString(propertySource.getProperty(name), "");
-                        if (rawValue != null && StringUtils.contains(rawValue, "${LOWCODER_")) {
+                        if (rawValue != null && StringUtils.contains(rawValue, "${OPENLOTUS_")) {
                             String defaultValue = StringUtils.substringBetween(rawValue, "${", "}");
                             String[] keyValue = StringUtils.split(defaultValue, ":");
                             if (keyValue.length == 2 && !defaults.containsKey(keyValue[0])) {

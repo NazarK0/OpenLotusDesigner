@@ -48,7 +48,7 @@ This feature supports two types of marketplaces:
 1. **Global Marketplace**: Accessible at app.lowcoder.cloud, where apps are available to everyone.
 2. **Local Marketplace**: Individual Lowcoder installations can host their own marketplaces, accessible only to their users.
 
-The `LOWCODER_MARKETPLACE_PRIVATE_MODE` environment variable controls the visibility of apps on local marketplaces:
+The `OPENLOTUS_MARKETPLACE_PRIVATE_MODE` environment variable controls the visibility of apps on local marketplaces:
 
 * **True**: Only logged-in users (Viewer, Editor, Owner) can see apps published on the local marketplace.
 * **False**: Apps published on the local marketplace can be seen by everyone, including Anonymous users.

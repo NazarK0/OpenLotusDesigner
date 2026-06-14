@@ -45,7 +45,7 @@ const AdvanceChildren = {
   delay: millisecondsControl({}),
 };
 
-class EmptyAction extends new MultiCompBuilder({}, () => () => {})
+class EmptyAction extends new MultiCompBuilder({}, () => () => { })
   .setPropertyViewFn(() => <></>)
   .build() {
   displayName() {
@@ -158,7 +158,7 @@ function ActionSelectorControlPropertyView(props: PropertyViewProps) {
         lineHeight={300}
         value={comp.children.compType.getView()}
         options={ActionOptions.filter((i) => {
-          if (window.__LOWCODER_ORG__) {
+          if (window.__OPENLOTUS_ORG__) {
             return devActions.includes(i.value);
           }
           if (editorState?.isModule()) {

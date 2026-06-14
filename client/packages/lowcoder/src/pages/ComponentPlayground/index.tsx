@@ -50,10 +50,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const editorState = new EditorState(new RootComp({ value: {} }), () => {});
+const editorState = new EditorState(new RootComp({ value: {} }), () => { });
 
 export default function ComponentPlayground() {
-  window.__LOWCODER_ORG__ = {};
+  window.__OPENLOTUS_ORG__ = {};
 
   const params = useParams<{ name: UICompType; dsl: string }>();
   const dsl = JSON.parse(decodeURIComponent(params.dsl || ""));

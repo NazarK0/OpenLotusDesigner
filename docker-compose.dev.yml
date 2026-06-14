@@ -41,8 +41,8 @@ services:
         environment:
             - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/lowcoder
             - SPRING_DATA_REDIS_HOST=redis
-            - LOWCODER_EMAIL_SIGNUP_ENABLED=true  # Вмикає саму форму
-            - LOWCODER_EMAIL_AUTH_ENABLED=true        # Додатковий прапорець для старіших гілок коду
+            - OPENLOTUS_EMAIL_SIGNUP_ENABLED=true # Вмикає можливість реєструватися через email
+            - OPENLOTUS_EMAIL_AUTH_ENABLED=true # Вмикає саму форму
             - MAVEN_OPTS=-XX:+AllowRedefinitionToAddDeleteMethods --add-opens java.base/java.nio=ALL-UNNAMED
         entrypoint: bash -c "cd /app/server/api-service && mvn clean package -DskipTests -q && java -Dpf4j.mode=development -Dspring.profiles.active=default -Dpf4j.pluginsDir=/app/server/api-service/lowcoder-plugins -XX:+AllowRedefinitionToAddDeleteMethods --add-opens java.base/java.nio=ALL-UNNAMED -cp lowcoder-server/target/lowcoder-api-service-bin/lowcoder-api-service.jar:lowcoder-server/target/lowcoder-api-service-bin/libs/* org.lowcoder.api.ServerApplication"
 
@@ -54,7 +54,7 @@ services:
         ports:
             - "8081:8081"
         environment:
-            - LOWCODER_API_SERVICE_URL=http://api-service:8080
+            - OPENLOTUS_API_SERVICE_URL=http://api-service:8080
             - NODE_OPTIONS=--openssl-legacy-provider # Resolves Debian 13 strict OpenSSL 3 behavior
         volumes:
             - .:/app # Mount root to allow workspace package resolutions
@@ -72,16 +72,16 @@ services:
         ports:
             - "3000:8000"
         environment:
-            - LOWCODER_API_SERVICE_URL=http://localhost:8080
+            - OPENLOTUS_API_SERVICE_URL=http://localhost:8080
             - WDS_SOCKET_PORT=3000
             - BROWSER=none # ЗАБОРОНЯЄ Vite шукати xdg-open всередині контейнера
             # Браузер на вашому Debian має йти на localhost:8090 (зовнішній порт вашого api-service)
             - REACT_APP_API_BASE_URL=http://localhost:8090
             - REACT_APP_API_SERVICE_URL=http://localhost:8090
-            
+
             # Для нових версій на Vite (про всяк випадок дублюємо, оскільки Vite ігнорує REACT_APP_)
             - VITE_API_SERVICE_URL=http://localhost:8090
-            
+
             # Node-service прокинуто на порт 8081, тому браузер теж шукатиме його на localhost
             - REACT_APP_NODE_SERVICE_URL=http://localhost:8081
             - VITE_NODE_SERVICE_URL=http://localhost:8081

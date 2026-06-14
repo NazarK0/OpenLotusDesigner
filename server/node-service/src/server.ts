@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
   res.status(200).json({
     code: 1,
     message: "Lowcoder Node Service is up and running",
-    success: true
+    success: true,
   });
 });
 
@@ -31,8 +31,8 @@ router.use(prefix, express.static(path.join(__dirname, "static")));
 router.use(morgan("dev"));
 
 const MAX_REQUEST_SIZE_BYTES = parseRequestLimitNoLib(
-  process.env.LOWCODER_MAX_REQUEST_SIZE,
-  "50mb"
+  process.env.OPENLOTUS_MAX_REQUEST_SIZE,
+  "50mb",
 );
 
 /** Parse the request */
@@ -58,14 +58,14 @@ const corsOptions: CorsOptions = {
   },
   credentials: true,
   allowedHeaders: [
-    'origin',
-    'X-Requested-With',
-    'Lowcoder-Ce-Selfhost-Token',
-    'Authorization',
-    'Accept',
-    'Content-Type'
+    "origin",
+    "X-Requested-With",
+    "Lowcoder-Ce-Selfhost-Token",
+    "Authorization",
+    "Accept",
+    "Content-Type",
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS']
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 };
 
 router.use(cors(corsOptions));
@@ -140,8 +140,8 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
   const m = s.match(/^(\d+(?:\.\d+)?)(b|kb|k|mb|m|gb|g|tb|t|pb|p)$/u);
   if (!m) {
     throw new Error(
-      `Invalid LOWCODER_MAX_REQUEST_SIZE: "${s0}". ` +
-      `Use bytes ("52428800"), long units ("50mb"), or Spring units ("50m").`
+      `Invalid OPENLOTUS_MAX_REQUEST_SIZE: "${s0}". ` +
+        `Use bytes ("52428800"), long units ("50mb"), or Spring units ("50m").`,
     );
   }
 
@@ -149,7 +149,7 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
   const unit = m[2];
 
   if (!Number.isFinite(value) || value <= 0) {
-    throw new Error(`Invalid LOWCODER_MAX_REQUEST_SIZE numeric value: "${m[1]}"`);
+    throw new Error(`Invalid OPENLOTUS_MAX_REQUEST_SIZE numeric value: "${m[1]}"`);
   }
 
   // Binary multipliers (base 1024)
@@ -198,7 +198,7 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
 
   // Guard: must fit into a safe integer
   if (!Number.isFinite(bytes) || bytes <= 0 || !Number.isSafeInteger(Math.floor(bytes))) {
-    throw new Error(`LOWCODER_MAX_REQUEST_SIZE too large or invalid: "${s0}"`);
+    throw new Error(`OPENLOTUS_MAX_REQUEST_SIZE too large or invalid: "${s0}"`);
   }
 
   return Math.floor(bytes);

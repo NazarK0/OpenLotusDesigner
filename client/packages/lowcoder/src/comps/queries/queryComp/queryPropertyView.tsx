@@ -1,4 +1,4 @@
-import { OLD_LOWCODER_DATASOURCE } from "@lowcoder-ee/constants/datasourceConstants";
+import { OLD_OPENLOTUS_DATASOURCE } from "@lowcoder-ee/constants/datasourceConstants";
 import { manualTriggerResource, ResourceType } from "@lowcoder-ee/constants/queryConstants";
 import { PreparedStatementConfig } from "api/datasourceApi";
 import { isCompWithPropertyView } from "comps/utils/propertyUtils";
@@ -81,7 +81,7 @@ export function QueryPropertyView(props: { comp: InstanceType<typeof QueryComp> 
     .datasourceConfig;
 
   const datasourceStatus = useDatasourceStatus(datasourceId, datasourceType);
-  const isStreamQuery  = children.compType.getView() === 'streamApi';
+  const isStreamQuery = children.compType.getView() === 'streamApi';
 
   return (
     <BottomTabs
@@ -298,8 +298,8 @@ export const QueryGeneralPropertyView = (props: {
                         newDatasourceType === children.compType.getView()
                           ? children.triggerType.getView() // Switching data sources of the same type retains the original trigger type
                           : includes(manualTriggerResource, newDatasourceType)
-                          ? "manual"
-                          : "automatic",
+                            ? "manual"
+                            : "automatic",
                       lastQueryStartTime: children.lastQueryStartTime.getView(),
                       datasourceId: newDatasourceId,
                       compType: newDatasourceType,
@@ -421,8 +421,8 @@ export const QueryGeneralPropertyView = (props: {
       <QuerySectionWrapper>
         {isCompWithPropertyView(children.comp)
           ? children.comp.propertyView({
-              datasourceId: datasourceId,
-            })
+            datasourceId: datasourceId,
+          })
           : children.comp.getPropertyView()}
       </QuerySectionWrapper>
 
@@ -447,8 +447,8 @@ export const QueryGeneralPropertyView = (props: {
             {children.onEvent.getPropertyView()}
           </QueryConfigWrapper>
 
-          <br/>    
-          
+          <br />
+
           {["postgres", "mysql", "mssql", "oracle", "mariadb"].includes(datasourceType) && (
             <SupaDemoDisplay
               url={trans("supademos.dataquery2table")}
@@ -545,7 +545,7 @@ function findQueryInNestedStructure(
   structure: any,
   queryName: string,
   visited = new Set()
-) : boolean {
+): boolean {
   if (typeof structure === "object" && structure !== null) {
     if (visited.has(structure)) {
       return false;
@@ -591,7 +591,7 @@ function collectQueryUsageDetails(component: any, queryName: string): any[] {
 
     if (!node || typeof node !== "object") { return false; }
     // Avoid circular references
-    if ( visited.has(node)) { return false; }
+    if (visited.has(node)) { return false; }
     else { visited.add(node); }
 
     // Check all properties of the current node
@@ -602,7 +602,7 @@ function collectQueryUsageDetails(component: any, queryName: string): any[] {
         const regex = new RegExp(`{{\\s*[!?]?(\\s*${queryName}\\b(\\.[^}\\s]*)?\\s*)(\\?[^}:]*:[^}]*)?\\s*}}`);
         const entriesToRemove = ["children", "comp", "unevaledValue", "value"];
         if (value === queryName || regex.test(value)) {
-          console.log("tester",component.children);
+          console.log("tester", component.children);
           results.push({
             componentType: component.children.compType?.value || "Unknown Component",
             componentName: component.children.name?.value || "Unknown Component",
@@ -639,7 +639,7 @@ function buildQueryUsageDataset(components: any[], queryName: string): any[] {
 }
 
 
-const ComponentButton = (props: {   
+const ComponentButton = (props: {
   componentType: string;
   componentName: string;
   path: string;
@@ -656,8 +656,8 @@ const ComponentButton = (props: {
   return (
     <Tooltip title={props.path} placement="top">
       <DataSourceButton onClick={handleClick}>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: "0px", width: "100%"}}>
-          <div style={{ flex: 1}}>
+        <div style={{ display: "flex", alignItems: "flex-start", gap: "0px", width: "100%" }}>
+          <div style={{ flex: 1 }}>
             {Icon && (
               <Icon style={{ margin: "6px 0px 0 -38px", width: "28px" }} />
             )}
@@ -734,8 +734,8 @@ export const QueryUsagePropertyView = React.memo((props: {
   placement?: PageType;
 }) => {
   const { comp, placement = "editor" } = props;
-  const [ loading, setLoading ] = useState(false);
-  const [ usageObjects, setUsageObjects ] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [usageObjects, setUsageObjects] = useState<any[]>([]);
   const editorState = useContext(EditorContext);
   const queryName = useMemo(() => comp.children.name.getView(), [comp.children.name]);
   const allUICompMap = useMemo(() => editorState.getAllUICompMap(), []);
@@ -756,7 +756,7 @@ export const QueryUsagePropertyView = React.memo((props: {
     setLoading(true);
     try {
       await buildUsageDataset();
-    } catch(e) {
+    } catch (e) {
       console.error(e);
     } finally {
       setLoading(false);
@@ -767,7 +767,7 @@ export const QueryUsagePropertyView = React.memo((props: {
     findQueryUsageObjects();
   }, [findQueryUsageObjects]);
 
-  const handleSelect = useCallback((componentType: string,componentName: string, path: string) => {
+  const handleSelect = useCallback((componentType: string, componentName: string, path: string) => {
     editorState.setSelectedCompNames(new Set([componentName]));
     // console.log(`Selected Component: ${componentName}, Path: ${path}`);
   }, []);
@@ -801,7 +801,7 @@ function useDatasourceStatus(datasourceId: string, datasourceType: ResourceType)
       datasourceType === "libraryQuery" ||
       datasourceType === "alasql" ||
       datasourceId === QUICK_REST_API_ID ||
-      datasourceId === QUICK_GRAPHQL_ID || 
+      datasourceId === QUICK_GRAPHQL_ID ||
       datasourceId === JS_CODE_ID
     ) {
       return "";

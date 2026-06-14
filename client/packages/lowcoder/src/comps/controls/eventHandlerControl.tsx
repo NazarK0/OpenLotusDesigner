@@ -165,7 +165,7 @@ const EventHandlerControlPropertyView = (props: {
     eventConfigs,
     type
   } = props;
-  
+
   // Reset state on unmount
   useEffect(() => {
     return () => {
@@ -189,7 +189,7 @@ const EventHandlerControlPropertyView = (props: {
     if (eventConfigs.length === 0 || !mountedRef.current) {
       return;
     }
-    
+
     const queryVariables = editorState
       ?.selectedOrFirstQueryComp()
       ?.children.variables.toJsonValue();
@@ -200,13 +200,13 @@ const EventHandlerControlPropertyView = (props: {
         queryName: editorState
           ?.selectedOrFirstQueryComp()
           ?.children.name.getView(),
-        queryVariables: queryVariables?.map((variable) => ({...variable, value: ''})),
+        queryVariables: queryVariables?.map((variable) => ({ ...variable, value: '' })),
       },
     };
     const messageHandler = {
       compType: "message",
     };
-    const isInDevIde = !!window.__LOWCODER_ORG__;
+    const isInDevIde = !!window.__OPENLOTUS_ORG__;
     const newHandler = {
       name: eventConfigs[0].value,
       handler: isInDevIde ? messageHandler : queryExecHandler,

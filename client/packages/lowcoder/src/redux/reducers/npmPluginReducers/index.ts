@@ -1,13 +1,13 @@
-import { createReducer } from "util/reducerUtils";
-import { ReduxAction, ReduxActionTypes } from "constants/reduxActionConstants";
-import { NpmPackageMeta } from "types/remoteComp";
+import { createReducer } from 'util/reducerUtils';
+import { ReduxAction, ReduxActionTypes } from 'constants/reduxActionConstants';
+import { NpmPackageMeta } from 'types/remoteComp';
 
 export interface NPMPluginState {
   packageMeta: Record<string, NpmPackageMeta>;
   packageVersion: Record<string, string>;
   loading: {
-    lowcoderComps: boolean,
-  },
+    lowcoderComps: boolean;
+  };
 }
 
 const initialState: NPMPluginState = {
@@ -15,13 +15,13 @@ const initialState: NPMPluginState = {
   packageVersion: {},
   loading: {
     lowcoderComps: false,
-  }
+  },
 };
 
 const npmPluginReducer = createReducer(initialState, {
   [ReduxActionTypes.SELECT_PACKAGE_VERSION]: (
     state: NPMPluginState,
-    action: ReduxAction<Record<string, string>>
+    action: ReduxAction<Record<string, string>>,
   ): NPMPluginState => {
     return {
       ...state,
@@ -34,7 +34,7 @@ const npmPluginReducer = createReducer(initialState, {
 
   [ReduxActionTypes.PACKAGE_META_READY]: (
     state: NPMPluginState,
-    action: ReduxAction<Record<string, NpmPackageMeta>>
+    action: ReduxAction<Record<string, NpmPackageMeta>>,
   ): NPMPluginState => {
     const selectVersions: Record<string, string> = {};
 
@@ -43,7 +43,7 @@ const npmPluginReducer = createReducer(initialState, {
       if (!meta || state.packageVersion[i]) {
         return;
       }
-      let defaultVersion = meta["dist-tags"]?.latest;
+      let defaultVersion = meta['dist-tags']?.latest;
       if (!defaultVersion) {
         defaultVersion = Object.keys(meta.versions || {})
           .sort()
@@ -63,9 +63,9 @@ const npmPluginReducer = createReducer(initialState, {
       },
     };
   },
-  [ReduxActionTypes.LOWCODER_COMPS_LOADING]: (
+  [ReduxActionTypes.OPENLOTUS_COMPS_LOADING]: (
     state: NPMPluginState,
-    action: ReduxAction<{loading: boolean}>
+    action: ReduxAction<{ loading: boolean }>,
   ): NPMPluginState => {
     return {
       ...state,

@@ -12,10 +12,10 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 data:
-  LOWCODER_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
-  LOWCODER_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
+  OPENLOTUS_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
+  OPENLOTUS_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
   {{- if .Values.global.config.apiServiceUrl }}
-  LOWCODER_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | quote }}
+  OPENLOTUS_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | quote }}
   {{- else }}
-  LOWCODER_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
+  OPENLOTUS_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
   {{- end }}

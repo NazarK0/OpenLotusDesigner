@@ -1,28 +1,28 @@
-import { DatasourceType } from "@lowcoder-ee/constants/queryConstants";
-import { DatasourceConfigType } from "api/datasourceApi";
-import { getBottomResIcon } from "@lowcoder-ee/util/bottomResUtils";
-import { trans } from "i18n";
-import { DataSourcePluginMeta } from "lowcoder-sdk/dataSource";
+import { DatasourceType } from '@lowcoder-ee/constants/queryConstants';
+import { DatasourceConfigType } from 'api/datasourceApi';
+import { getBottomResIcon } from '@lowcoder-ee/util/bottomResUtils';
+import { trans } from 'i18n';
+import { DataSourcePluginMeta } from 'lowcoder-sdk/dataSource';
 
 export const databasePlugins: Partial<DatasourceType>[] = [
-  "mysql",
-  "mongodb",
-  "postgres",
-  "redis",
-  "es",
-  "mssql",
-  "oracle",
-  "clickHouse",
-  "snowflake",
-  "mariadb",
-  "alasql",
+  'mysql',
+  'mongodb',
+  'postgres',
+  'redis',
+  'es',
+  'mssql',
+  'oracle',
+  'clickHouse',
+  'snowflake',
+  'mariadb',
+  'alasql',
 ];
 
 export const apiPluginsForQueryLibrary: Partial<DatasourceType>[] = [
-  "restApi",
-  "smtp",
-  "graphql",
-  "googleSheets",
+  'restApi',
+  'smtp',
+  'graphql',
+  'googleSheets',
 ];
 
 export const apiPlugins: Partial<DatasourceType>[] = [...apiPluginsForQueryLibrary];
@@ -41,7 +41,7 @@ export interface Datasource {
   pluginDefinition?: DataSourcePluginMeta;
 }
 
-export const QUICK_REST_API_ID = "#QUICK_REST_API";
-export const QUICK_GRAPHQL_ID = "#QUICK_GRAPHQL";
-export const JS_CODE_ID = "#JS_CODE";
-export const OLD_LOWCODER_DATASOURCE: Partial<DatasourceType>[] = [];
+export const QUICK_REST_API_ID = '#QUICK_REST_API';
+export const QUICK_GRAPHQL_ID = '#QUICK_GRAPHQL';
+export const JS_CODE_ID = '#JS_CODE';
+export const OLD_OPENLOTUS_DATASOURCE: Partial<DatasourceType>[] = [];

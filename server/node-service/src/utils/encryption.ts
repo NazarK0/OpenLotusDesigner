@@ -4,13 +4,13 @@ import { badRequest } from "../common/error";
 // Spring's Encryptors.text uses AES-256-CBC with PBKDF2 (HmacSHA1, 1024 iterations).
 const ALGORITHM = "aes-256-cbc";
 const KEY_LENGTH = 32; // 256 bits
-const IV_LENGTH = 16;  // 128 bits
+const IV_LENGTH = 16; // 128 bits
 const ITERATIONS = 1024;
 const DIGEST = "sha1";
 
 // You must set these to match your Java config:
-const PASSWORD = process.env.LOWCODER_NODE_SERVICE_SECRET || "lowcoderpwd";
-const SALT_HEX = process.env.LOWCODER_NODE_SERVICE_SECRET_SALT || "lowcodersalt";
+const PASSWORD = process.env.OPENLOTUS_NODE_SERVICE_SECRET || "lowcoderpwd";
+const SALT_HEX = process.env.OPENLOTUS_NODE_SERVICE_SECRET_SALT || "lowcodersalt";
 
 /**
  * Derive key from password and salt using PBKDF2WithHmacSHA1 (Spring's default).
