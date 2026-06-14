@@ -2,7 +2,7 @@
   "name": "OpenLotus Designer",
   "description": "A Visual App builder for OpenLotus.",
   "repository": "https://github.com/NazarK0/OpenLotusDesigner",
-  "logo": "https://raw.githubusercontent.com/NazarK0/OpenLotusAssets/refs/heads/dev/Logo/favicon%20OpenLotusLogoTransparentWithoutText/web-app-manifest-512x512.png",
+  "logo": "https://raw.githubusercontent.com/NazarK0/OpenLotusAssets/refs/heads/dev/Logo/OpenLotusLogoTransparentWithoutText/web-app-manifest-512x512.png",
   "keywords": [
     "LowCode",
     "Low code",
