@@ -1,1 +1,0 @@
-export { TableLiteComp } from "./tableComp";
