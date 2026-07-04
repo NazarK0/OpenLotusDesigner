@@ -13,7 +13,7 @@ And now the Lowcoder SDK Scripts, as the last tags before the \</BODY> closing t
 
 ```
 <script src="https://sdk.lowcoder.cloud/bundle.js"></script>
-<script type="module" src="https://unpkg.com/lowcoder-comps@latest/index.js"></script>
+<script type="module" src="https://unpkg.com/tool-comps@latest/index.js"></script>
 ```
 
 {% hint style="warning" %}

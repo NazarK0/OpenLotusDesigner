@@ -119,6 +119,7 @@ import {
   LineChartCompIcon,
   ScatterChartCompIcon
 } from "lowcoder-design";
+
 import { ModuleComp } from "./comps/moduleComp/moduleComp";
 import { TableComp } from "./comps/tableComp/tableComp";
 import { defaultTableData } from "./comps/tableComp/mockTableComp";
@@ -203,9 +204,9 @@ type Registry = {
 
 const builtInRemoteComps: Omit<RemoteCompInfo, "compName"> = {
   // source: !!REACT_APP_BUNDLE_BUILTIN_PLUGIN ? "bundle" : "npm",
-  source: "npm",
+  source: "bundle",
   isRemote: true,
-  packageName: "lowcoder-comps",
+  packageName: "tool-comps",
 };
 
 export var uiCompMap: Registry = {

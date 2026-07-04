@@ -18,7 +18,7 @@ yarn build
 Now you can start the local dev server for Lowcoder Extra Components to develop and add your Component Plugin
 
 ```bash
-cd client/packages/lowcoder-comps
+cd client/packages/tool-comps
 yarn start
 ```
 
@@ -30,11 +30,11 @@ After the local dev server is started, the Lowcoder Component Builder is prepare
 
 Data, methods and properties are visible and interactive, so you can test your Component during development. The view will get automatically refreshed.
 
-The Lowcoder Component Builder makes the development & publishing of multiple individual components as bundle possible. Find the /src/comps folder in /lowcoder-comps. Here are existing components to find. It is suggested for new components to create a new folder. In the left navigation of the Components Preview you can switch between your components.
+The Lowcoder Component Builder makes the development & publishing of multiple individual components as bundle possible. Find the /src/comps folder in /tool-comps. Here are existing components to find. It is suggested for new components to create a new folder. In the left navigation of the Components Preview you can switch between your components.
 
 to see your component and include it in the processing on the development server, you have to do the folloiwing steps:
 
-### modify /lowcoder-comps/package.json
+### modify /tool-comps/package.json
 
 ```JSON
 "yournewcomponent": {
@@ -65,7 +65,7 @@ Please choose one category out of:
 
 layoutInfo helps you to define the size (in grid-cells) of your Component in the grid for the very first moment, when a user drags your Component out of the components display on the right side in the Lowcoder Editor.
 
-### modify /lowcoder-comps/src/index.ts
+### modify /tool-comps/src/index.ts
 
 ```JavaScript
 Add your Component for the exported members of Lowcoder Extra Components 
@@ -113,7 +113,7 @@ yarn build --publish
 ```
 
 This command will publis the whole Lowcoder Extra Components bundle to [NPMjs](https://www.npmjs.com/)
-Make sure, you updated the Version of Lowcoder Comps before in /lowcoder-comps/package.json
+Make sure, you updated the Version of Lowcoder Comps before in /tool-comps/package.json
 
 ## Contribute your Plugin
 

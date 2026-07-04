@@ -16,7 +16,7 @@
     "translate": "node --loader ts-node/esm ./scripts/translate.js",
     "build": "yarn node ./scripts/build.js",
     "build:ee": "REACT_APP_EDITION=enterprise yarn node ./scripts/build.js",
-    "test": "jest && yarn workspace lowcoder-comps test",
+    "test": "jest && yarn workspace tool-comps test",
     "prepare": "yarn workspace secale-designer-app prepare",
     "build:core": "yarn workspace lowcoder-core build",
     "test:core": "yarn workspace lowcoder-core test",

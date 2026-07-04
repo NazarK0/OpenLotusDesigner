@@ -21,8 +21,8 @@ jobs:
         with:
           diff-search: true
           static-checking: localIsNew
-          file-name: client/packages/lowcoder-comps/package.json
-          file-url: https://unpkg.com/lowcoder-comps@latest/package.json
+          file-name: client/packages/tool-comps/package.json
+          # file-url: https://unpkg.com/tool-comps@latest/package.json
 
       - name: Version update detected
         if: steps.check.outputs.changed == 'true'
@@ -40,13 +40,13 @@ jobs:
         uses: borales/actions-yarn@v4.2.0
         with:
           cmd: install
-          dir: client/packages/lowcoder-comps
+          dir: client/packages/tool-comps
 
       - name: Publish
         if: steps.check.outputs.changed == 'true'
         uses: borales/actions-yarn@v4.2.0
         with:
           cmd: build_publish
-          dir: client/packages/lowcoder-comps
+          dir: client/packages/tool-comps
         env:
           NODE_AUTH_TOKEN: ${{ secrets.LOWCODERNPMBOT }}

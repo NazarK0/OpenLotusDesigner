@@ -9,7 +9,7 @@ import { useContext, useState } from "react";
 import { useMount } from "react-use";
 import styled from "styled-components";
 import { RemoteCompInfo, RemoteCompLoader, RemoteCompSource } from "types/remoteComp";
-import { loaders } from "./loaders"; 
+import { loaders } from "./loaders";
 import { withErrorBoundary } from "comps/generators/withErrorBoundary";
 import { EditorContext } from "@lowcoder-ee/comps/editorState";
 import { CompContext } from "@lowcoder-ee/comps/utils/compContext";
@@ -66,10 +66,10 @@ const RemoteCompView = React.memo((props: React.PropsWithChildren<RemoteCompView
   const externalEditorState = useContext(ExternalEditorContext);
   const appId = externalEditorState.applicationId;
   const lowcoderCompPackageVersion = editorState?.getAppSettings().lowcoderCompVersion || 'latest';
-  const latestLowcoderCompsVersion = useSelector((state: AppState) => state.npmPlugin.packageVersion['lowcoder-comps']);
+  const latestLowcoderCompsVersion = useSelector((state: AppState) => state.npmPlugin.packageVersion['tool-comps']);
 
   let packageVersion = 'latest';
-  // lowcoder-comps's package version
+  // tool-comps's package version
   if (isLowcoderComp && source !== 'bundle') {
     packageVersion = lowcoderCompPackageVersion === 'latest' && Boolean(latestLowcoderCompsVersion)
       ? latestLowcoderCompsVersion
@@ -132,7 +132,7 @@ export function remoteComp<T extends RemoteCompInfo = RemoteCompInfo>(
         log.error("loader not found, remote info:", remoteInfo);
         return;
       }
-      const RemoteExportedComp = await finalLoader({...remoteInfo, packageVersion, appId});
+      const RemoteExportedComp = await finalLoader({ ...remoteInfo, packageVersion, appId });
       if (!RemoteExportedComp) {
         return;
       }
@@ -161,7 +161,7 @@ export function remoteComp<T extends RemoteCompInfo = RemoteCompInfo>(
       return (
         <RemoteCompView
           key={key}
-          isLowcoderComp={remoteInfo?.packageName === 'lowcoder-comps'}
+          isLowcoderComp={remoteInfo?.packageName === 'tool-comps'}
           loadComp={(packageVersion?: string, appId?: string) => this.load(packageVersion, appId)}
           loadingElement={loadingElement}
           source={remoteInfo?.source}

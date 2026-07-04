@@ -66,7 +66,7 @@ export function PluginSetting() {
           <InputList
             addBtnText={trans("pluginSetting.npmPluginAddButton")}
             value={settings.npmPlugins || []}
-            placeholder="https://www.npmjs.com/package/hello-lowcoder-comps"
+            placeholder="https://www.npmjs.com/package/hello-tool-comps"
             onChange={(value) => setSettings((v) => ({ ...v, npmPlugins: value }))}
           />
           <SaveButton onClick={() => handleSaveCommonSetting("npmPlugins")()}>

@@ -23,8 +23,8 @@
     "paths": {
       "*": [
         "*",
-        "../../lowcoder/src/*",
-        "../../lowcoder-comps/src/*",
+        "../../app/src/*",
+        "../../tool-comps/src/*",
         "../../lowcoder-design/src/*"
       ],
       "@lowcoder-ee/*": ["../../lowcoder/src/*"]
@@ -34,8 +34,8 @@
   "include": [
     "src",
     "index.tsx",
-    "../lowcoder/src",
-    "../lowcoder-comps/src",
+    "../app/src",
+    "../tool-comps/src",
     "../lowcoder-design/src"
   ]
 }

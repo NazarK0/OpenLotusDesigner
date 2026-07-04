@@ -15,7 +15,7 @@ export function currentDirName(importMetaUrl) {
   return dirname(fileURLToPath(importMetaUrl));
 }
 
-const builtinPlugins = ["lowcoder-comps"];
+const builtinPlugins = ["tool-comps"];
 const curDirName = currentDirName(import.meta.url);
 
 async function downloadFile(url, dest) {

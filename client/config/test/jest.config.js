@@ -27,7 +27,7 @@ export default {
   modulePaths: [
     "<rootDir>/src",
     path.resolve(currentDir, "../../packages/app/src"),
-    path.resolve(currentDir, "../../packages/lowcoder-comps/src"),
+    path.resolve(currentDir, "../../packages/tool-comps/src"),
     path.resolve(currentDir, "../../packages/lowcoder-design/src"),
   ],
   setupFiles: [path.resolve(currentDir, "./jest.setup.js")],

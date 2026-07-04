@@ -84,7 +84,7 @@ const Wrapper = React.memo((props: {
   const deploymentId = useSelector(getDeploymentId);
   const user = useSelector(getUser);
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     if (user.currentOrgId) {
       dispatch(fetchDeploymentIdAction());
@@ -92,22 +92,21 @@ const Wrapper = React.memo((props: {
   }, [user.currentOrgId]);
 
   useEffect(() => {
-    if(Boolean(deploymentId)) {
+    if (Boolean(deploymentId)) {
       dispatch(fetchSubscriptionsAction())
     }
   }, [deploymentId]);
-  
+
   const theme = useMemo(() => {
     return {
       hashed: false,
       token: {
-        fontFamily: `${
-          props.fontFamily
-          ? props.fontFamily.split('+').join(' ')
-          : `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Segoe UI", "PingFang SC",
+        fontFamily: `${props.fontFamily
+            ? props.fontFamily.split('+').join(' ')
+            : `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Segoe UI", "PingFang SC",
             "Microsoft Yahei", "Hiragino Sans GB", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
             "Segoe UI Symbol", "Noto Color Emoji"`
-        }, sans-serif`,
+          }, sans-serif`,
       },
     }
   }, [props.fontFamily]);
@@ -358,135 +357,135 @@ class AppIndex extends React.Component<AppIndexProps, any> {
           ]}
         </Helmet>
         <SystemWarning />
-          <Router history={history}>
-            <Switch>
-              <LazyRoute
-                exact
-                path={IMPORT_APP_FROM_TEMPLATE_URL}
-                component={LazyAppFromTemplate}
-              />
+        <Router history={history}>
+          <Switch>
+            <LazyRoute
+              exact
+              path={IMPORT_APP_FROM_TEMPLATE_URL}
+              component={LazyAppFromTemplate}
+            />
 
-              <LazyRoute
-                exact
-                fallback="layout"
-                path={PUBLIC_APP_EDITOR_URL}
-                component={LazyPublicAppEditor}
-              />
+            <LazyRoute
+              exact
+              fallback="layout"
+              path={PUBLIC_APP_EDITOR_URL}
+              component={LazyPublicAppEditor}
+            />
 
-              <Route
-                path={
-                  [
-                    APP_EDITOR_URL,
-                    USER_PROFILE_URL,
-                    NEWS_URL,
-                    ORG_HOME_URL,
-                    ALL_APPLICATIONS_URL,
-                    DATASOURCE_CREATE_URL,
-                    DATASOURCE_EDIT_URL,
-                    DATASOURCE_URL,
-                    SUPPORT_URL,
-                    QUERY_LIBRARY_URL,
-                    FOLDERS_URL,
-                    FOLDER_URL,
-                    TRASH_URL,
-                    SETTING_URL,
-                    MARKETPLACE_URL,
-                    ADMIN_APP_URL
-                  ]
-                }
-              >
-                <SimpleSubscriptionContextProvider>
-                  <Switch>
-                    <LazyRoute
-                      fallback="layout"
-                      path={APP_EDITOR_URL}
-                      component={LazyAppEditor}
-                    />
-                    <LazyRoute
-                      fallback="layout"
-                      path={[
-                        USER_PROFILE_URL,
-                        NEWS_URL,
-                        ORG_HOME_URL,
-                        ALL_APPLICATIONS_URL,
-                        DATASOURCE_CREATE_URL,
-                        DATASOURCE_EDIT_URL,
-                        DATASOURCE_URL,
-                        SUPPORT_URL,
-                        QUERY_LIBRARY_URL,
-                        FOLDERS_URL,
-                        FOLDER_URL,
-                        TRASH_URL,
-                        SETTING_URL,
-                        MARKETPLACE_URL,
-                        ADMIN_APP_URL
-                      ]}
-                      // component={ApplicationListPage}
-                      component={LazyApplicationHome}
-                    />
-                  </Switch>
-                </SimpleSubscriptionContextProvider>
-              </Route>
-              <LazyRoute exact path={ADMIN_AUTH_URL} component={LazyUserAuthComp} />
-              <LazyRoute path={USER_AUTH_URL} component={LazyUserAuthComp} />
-              <LazyRoute
-                path={ORG_AUTH_LOGIN_URL}
-                component={LazyUserAuthComp}
-              />
-              <LazyRoute
-                path={ORG_AUTH_REGISTER_URL}
-                component={LazyUserAuthComp}
-              />
-              <LazyRoute
-                path={ORG_AUTH_FORGOT_PASSWORD_URL}
-                component={LazyUserAuthComp}
-              />
-              <LazyRoute
-                path={ORG_AUTH_RESET_PASSWORD_URL}
-                component={LazyUserAuthComp}
-              />
-              <LazyRoute
-                path={INVITE_LANDING_URL}
-                component={LazyInviteLanding}
-              />
-              <LazyRoute
-                path={`${COMPONENT_DOC_URL}/:name`}
-                component={LazyComponentDoc}
-              />
-              <LazyRoute
-                path={`/playground/:name/:dsl`}
-                component={LazyComponentPlayground}
-              />
+            <Route
+              path={
+                [
+                  APP_EDITOR_URL,
+                  USER_PROFILE_URL,
+                  NEWS_URL,
+                  ORG_HOME_URL,
+                  ALL_APPLICATIONS_URL,
+                  DATASOURCE_CREATE_URL,
+                  DATASOURCE_EDIT_URL,
+                  DATASOURCE_URL,
+                  SUPPORT_URL,
+                  QUERY_LIBRARY_URL,
+                  FOLDERS_URL,
+                  FOLDER_URL,
+                  TRASH_URL,
+                  SETTING_URL,
+                  MARKETPLACE_URL,
+                  ADMIN_APP_URL
+                ]
+              }
+            >
+              <SimpleSubscriptionContextProvider>
+                <Switch>
+                  <LazyRoute
+                    fallback="layout"
+                    path={APP_EDITOR_URL}
+                    component={LazyAppEditor}
+                  />
+                  <LazyRoute
+                    fallback="layout"
+                    path={[
+                      USER_PROFILE_URL,
+                      NEWS_URL,
+                      ORG_HOME_URL,
+                      ALL_APPLICATIONS_URL,
+                      DATASOURCE_CREATE_URL,
+                      DATASOURCE_EDIT_URL,
+                      DATASOURCE_URL,
+                      SUPPORT_URL,
+                      QUERY_LIBRARY_URL,
+                      FOLDERS_URL,
+                      FOLDER_URL,
+                      TRASH_URL,
+                      SETTING_URL,
+                      MARKETPLACE_URL,
+                      ADMIN_APP_URL
+                    ]}
+                    // component={ApplicationListPage}
+                    component={LazyApplicationHome}
+                  />
+                </Switch>
+              </SimpleSubscriptionContextProvider>
+            </Route>
+            <LazyRoute exact path={ADMIN_AUTH_URL} component={LazyUserAuthComp} />
+            <LazyRoute path={USER_AUTH_URL} component={LazyUserAuthComp} />
+            <LazyRoute
+              path={ORG_AUTH_LOGIN_URL}
+              component={LazyUserAuthComp}
+            />
+            <LazyRoute
+              path={ORG_AUTH_REGISTER_URL}
+              component={LazyUserAuthComp}
+            />
+            <LazyRoute
+              path={ORG_AUTH_FORGOT_PASSWORD_URL}
+              component={LazyUserAuthComp}
+            />
+            <LazyRoute
+              path={ORG_AUTH_RESET_PASSWORD_URL}
+              component={LazyUserAuthComp}
+            />
+            <LazyRoute
+              path={INVITE_LANDING_URL}
+              component={LazyInviteLanding}
+            />
+            <LazyRoute
+              path={`${COMPONENT_DOC_URL}/:name`}
+              component={LazyComponentDoc}
+            />
+            <LazyRoute
+              path={`/playground/:name/:dsl`}
+              component={LazyComponentPlayground}
+            />
 
-              {this.props.isFetchUserFinished && this.props.defaultHomePage? (
-                !this.props.orgDev ? ( 
-                  <Redirect exact from={BASE_URL} to={APPLICATION_VIEW_URL(this.props.defaultHomePage || "", "view")}/>
-                ) : (
-                  <Redirect exact from={BASE_URL} to={ORG_HOME_URL} />
-                )
+            {this.props.isFetchUserFinished && this.props.defaultHomePage ? (
+              !this.props.orgDev ? (
+                <Redirect exact from={BASE_URL} to={APPLICATION_VIEW_URL(this.props.defaultHomePage || "", "view")} />
               ) : (
-                <Redirect exact from={BASE_URL} to={ALL_APPLICATIONS_URL} />
-              )}
+                <Redirect exact from={BASE_URL} to={ORG_HOME_URL} />
+              )
+            ) : (
+              <Redirect exact from={BASE_URL} to={ALL_APPLICATIONS_URL} />
+            )}
 
-              <Redirect to={`${COMPONENT_DOC_URL}/input`} path="/components" />
+            <Redirect to={`${COMPONENT_DOC_URL}/input`} path="/components" />
 
-              {developEnv() && (
-                <>
-                  <LazyRoute
-                    path="/debug_comp/:name"
-                    component={LazyDebugComp}
-                  />
-                  <LazyRoute
-                    exact
-                    path="/debug_comp"
-                    component={LazyDebugComp}
-                  />
-                  <LazyRoute path="/debug_editor" component={LazyAppEditor} />
-                  <LazyRoute path="/debug_new" component={LazyDebugNewComp} />
-                </>
-              )}
-            </Switch>
-          </Router>
+            {developEnv() && (
+              <>
+                <LazyRoute
+                  path="/debug_comp/:name"
+                  component={LazyDebugComp}
+                />
+                <LazyRoute
+                  exact
+                  path="/debug_comp"
+                  component={LazyDebugComp}
+                />
+                <LazyRoute path="/debug_editor" component={LazyAppEditor} />
+                <LazyRoute path="/debug_new" component={LazyDebugNewComp} />
+              </>
+            )}
+          </Switch>
+        </Router>
       </Wrapper>
     );
   }
@@ -521,9 +520,9 @@ const mapDispatchToProps = (dispatch: any) => ({
   fetchLowcoderCompVersions: async () => {
     try {
       dispatch(setLowcoderCompsLoading(true));
-      const packageMeta = await getNpmPackageMeta('lowcoder-comps');
+      const packageMeta = await getNpmPackageMeta('tool-comps');
       if (packageMeta?.versions) {
-        dispatch(packageMetaReadyAction('lowcoder-comps', packageMeta));
+        dispatch(packageMetaReadyAction('tool-comps', packageMeta));
       }
       dispatch(setLowcoderCompsLoading(false));
     } catch (_) {

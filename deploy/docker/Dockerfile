@@ -126,11 +126,11 @@ ARG REACT_APP_EDITION=community
 ARG REACT_APP_DISABLE_JS_SANDBOX=true
 RUN yarn build
 
-# Build lowcoder-comps
-WORKDIR /lowcoder-client/packages/lowcoder-comps
+# Build tool-comps
+WORKDIR /lowcoder-client/packages/tool-comps
 RUN yarn install
 RUN yarn build
-RUN tar -zxf lowcoder-comps-*.tgz && mv package lowcoder-comps
+RUN tar -zxf tool-comps-*.tgz && mv package tool-comps
 
 # Build lowcoder-sdk
 WORKDIR /lowcoder-client/packages/lowcoder-sdk
@@ -159,7 +159,7 @@ RUN usermod --login lowcoder --uid 9001 nginx \
 # Copy lowcoder client
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/appbuild/ /lowcoder/client
 # Copy lowcoder components
-COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
+COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/tool-comps/tool-comps /lowcoder/client-comps
 # Copy lowcoder SDK
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-sdk /lowcoder/client-sdk
 # Copy lowcoder SDK webpack bundle
@@ -204,11 +204,11 @@ ARG REACT_APP_EDITION=enterprise
 ARG REACT_APP_DISABLE_JS_SANDBOX=true
 RUN yarn build:ee
 
-# Build lowcoder-comps
-WORKDIR /lowcoder-client-ee/packages/lowcoder-comps
+# Build tool-comps
+WORKDIR /lowcoder-client-ee/packages/tool-comps
 RUN yarn install
 RUN yarn build
-RUN tar -zxf lowcoder-comps-*.tgz && mv package lowcoder-comps
+RUN tar -zxf tool-comps-*.tgz && mv package tool-comps
 
 # Build lowcoder-sdk
 WORKDIR /lowcoder-client-ee/packages/lowcoder-sdk
@@ -237,7 +237,7 @@ RUN usermod --login lowcoder --uid 9001 nginx \
 # Copy lowcoder client
 COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/appbuild/ /lowcoder/client
 # Copy lowcoder components
-COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
+COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/tool-comps/tool-comps /lowcoder/client-comps
 # Copy lowcoder SDK
 COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/lowcoder-sdk /lowcoder/client-sdk
 # Copy lowcoder SDK webpack bundle
@@ -323,7 +323,7 @@ COPY deploy/docker/frontend/ssl-params.conf /etc/nginx/ssl-params.conf
 #    copy lowcoder client
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/appbuild/ /lowcoder/client
 #    copy lowcoder components
-COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
+COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/tool-comps/tool-comps /lowcoder/client-comps
 #    copy lowcoder SDK
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-sdk /lowcoder/client-sdk
 #    copy lowcoder SDK webpack bundle

@@ -53,13 +53,13 @@ const CurrentUserHookComp = hookToStateComp(() => {
 
 function useCurrentTime() {
   const [time, setTime] = React.useState(0);
-  
+
   // Add cleanup for the interval
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date().getTime());
     }, 1000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -98,7 +98,7 @@ const builtInRemoteComps: Omit<RemoteCompInfo, "compName"> = {
   // source: !!REACT_APP_BUNDLE_BUILTIN_PLUGIN ? "bundle" : "npm",
   source: "npm",
   isRemote: true,
-  packageName: "lowcoder-comps",
+  packageName: "tool-comps",
 };
 const HookMap: HookCompMapRawType = {
   title: TitleHookComp,
@@ -164,7 +164,7 @@ function SelectHookView(props: {
     } else if (
       (selectedComp as any).children.comp === props.comp
     ) {
-      if ((selectedComp as any).children.comp?.remoteInfo?.isRemote){
+      if ((selectedComp as any).children.comp?.remoteInfo?.isRemote) {
         return;
       }
 

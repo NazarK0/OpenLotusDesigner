@@ -235,7 +235,7 @@ type ChildrenInstance = RecordConstructorToComp<typeof childrenMap> & {
 
 function AppGeneralSettingsModal(props: ChildrenInstance) {
   const application = useSelector(currentApplication);
-  const lowcoderCompsMeta = useSelector((state: AppState) => state.npmPlugin.packageMeta['lowcoder-comps']);
+  const lowcoderCompsMeta = useSelector((state: AppState) => state.npmPlugin.packageMeta['tool-comps']);
   const [lowcoderCompVersions, setLowcoderCompVersions] = useState(['latest']);
   const {
     title,
@@ -245,7 +245,7 @@ function AppGeneralSettingsModal(props: ChildrenInstance) {
     showHeaderInPublic,
     lowcoderCompVersion,
   } = props;
-  
+
   useEffect(() => {
     setLowcoderCompVersions([
       'latest',
@@ -282,46 +282,46 @@ function AppGeneralSettingsModal(props: ChildrenInstance) {
               tooltip: trans("aggregation.iconTooltip"),
             })}
           </div>
-          <div style={{ margin: '20px 0'}}>
+          <div style={{ margin: '20px 0' }}>
             {showHeaderInPublic.propertyView({
               label: trans("appSetting.showPublicHeader"),
             })}
           </div>
         </DivStyled>
       </BaseSection>
-      {application && !isAggregationApp(AppUILayoutType[application.applicationType]) && 
+      {application && !isAggregationApp(AppUILayoutType[application.applicationType]) &&
         <BaseSection
-        name={"Lowcoder Comps"}
-        width={288}
-        noMargin
-        style={{
-          borderTop: "1px solid #e1e3eb",
-          backgroundColor: "#fff",
-        }}
-      >
-        <DivStyled>
-          <Dropdown
-            defaultValue={lowcoderCompVersion.getView()}
-            placeholder={'Select version'}
-            options={
-              lowcoderCompVersions.map(version => ({label: version, value: version}))
-            }
-            label={'Current Version'}
-            placement="bottom"
-            onChange={async (value) => {
-              await getPromiseAfterDispatch(
-                lowcoderCompVersion.dispatch,
-                lowcoderCompVersion.changeValueAction(value), {
+          name={"Lowcoder Comps"}
+          width={288}
+          noMargin
+          style={{
+            borderTop: "1px solid #e1e3eb",
+            backgroundColor: "#fff",
+          }}
+        >
+          <DivStyled>
+            <Dropdown
+              defaultValue={lowcoderCompVersion.getView()}
+              placeholder={'Select version'}
+              options={
+                lowcoderCompVersions.map(version => ({ label: version, value: version }))
+              }
+              label={'Current Version'}
+              placement="bottom"
+              onChange={async (value) => {
+                await getPromiseAfterDispatch(
+                  lowcoderCompVersion.dispatch,
+                  lowcoderCompVersion.changeValueAction(value), {
                   autoHandleAfterReduce: true,
                 }
-              )
-              setTimeout(() => {
-                window.location.reload();
-              }, 1000);
-            }}
-          />
-        </DivStyled>
-      </BaseSection>
+                )
+                setTimeout(() => {
+                  window.location.reload();
+                }, 1000);
+              }}
+            />
+          </DivStyled>
+        </BaseSection>
       }
       <BaseSection
         name={"Shortcuts"}
@@ -368,8 +368,8 @@ function AppCanvasSettingsModal(props: ChildrenInstance) {
 
   const themeWithDefault = (
     themeId.getView() === DEFAULT_THEMEID ||
-    (!!themeId.getView() &&
-      THEME_OPTIONS.findIndex((item) => item.value === themeId.getView()) === -1)
+      (!!themeId.getView() &&
+        THEME_OPTIONS.findIndex((item) => item.value === themeId.getView()) === -1)
       ? DEFAULT_THEMEID
       : themeId.getView()
   ) as string;
@@ -411,8 +411,8 @@ function AppCanvasSettingsModal(props: ChildrenInstance) {
               themeWithDefault === ""
                 ? undefined
                 : themeWithDefault === DEFAULT_THEMEID
-                ? defaultTheme || undefined
-                : themeWithDefault
+                  ? defaultTheme || undefined
+                  : themeWithDefault
             }
             placeholder={trans("appSetting.themeSettingDefault")}
             options={THEME_OPTIONS}
@@ -437,7 +437,7 @@ function AppCanvasSettingsModal(props: ChildrenInstance) {
               );
             }}
           />
-          <div style={{ margin: '20px 0'}}>
+          <div style={{ margin: '20px 0' }}>
             {preventAppStylesOverwriting.propertyView({
               label: trans("prop.preventOverwriting"),
             })}
