@@ -101,11 +101,11 @@ function getFile(path: string) {
 
 test("test resolveParsedValue", async () => {
   const files = await Promise.all([
-    getFile("packages/lowcoder/src/comps/comps/fileComp/fileComp.test.csv"),
-    getFile("packages/lowcoder/src/comps/comps/fileComp/fileComp.test.json"),
-    getFile("packages/lowcoder/src/comps/comps/fileComp/fileComp.test.png"),
-    getFile("packages/lowcoder/src/comps/comps/fileComp/fileComp.test.txt"),
-    getFile("packages/lowcoder/src/comps/comps/fileComp/fileComp.test.xlsx"),
+    getFile("packages/appsrc/comps/comps/fileComp/fileComp.test.csv"),
+    getFile("packages/appsrc/comps/comps/fileComp/fileComp.test.json"),
+    getFile("packages/appsrc/comps/comps/fileComp/fileComp.test.png"),
+    getFile("packages/appsrc/comps/comps/fileComp/fileComp.test.txt"),
+    getFile("packages/appsrc/comps/comps/fileComp/fileComp.test.xlsx"),
   ]);
   const parsedValue = await resolveParsedValue(files as any);
   expect(parsedValue[0]).toMatchObject(expectParseValue);

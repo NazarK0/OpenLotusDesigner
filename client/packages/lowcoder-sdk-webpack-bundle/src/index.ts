@@ -1,7 +1,7 @@
 // @ts-nocheck
-import "../../lowcoder/src/index.less";
-import * as sdk from "../../lowcoder";
-export * from "../../lowcoder";
+import '../../app/src/index.less';
+import * as sdk from '../../app';
+export * from '../../app';
 
 window.$lowcoder_sdk = sdk;
 

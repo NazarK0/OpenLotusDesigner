@@ -152,7 +152,7 @@ Inside the `client/` folder, create or update `netlify.toml`:
 [build]
   base = "client"
   command = "yarn workspace lowcoder build"
-  publish = "client/packages/lowcoder/build"
+  publish = "client/packages/appbuild"
 ```
 
 This ensures Netlify uses the correct build and publish paths when building locally.
@@ -176,7 +176,7 @@ netlify build
 3️⃣ Deploy to production:
 
 ```bash
-netlify deploy --prod --dir=packages/lowcoder/build
+netlify deploy --prod --dir=packages/appbuild
 ```
 
 ---

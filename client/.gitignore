@@ -14,7 +14,7 @@
 
 # production
 /build
-/packages/lowcoder/build
+/packages/appbuild
 
 # misc
 .DS_Store

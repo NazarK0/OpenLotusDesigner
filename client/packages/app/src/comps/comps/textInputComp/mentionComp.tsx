@@ -43,7 +43,7 @@ import { default as Mentions, type MentionsOptionProps } from "antd/es/mentions"
 import { blurMethod, focusWithOptions } from "comps/utils/methodUtils";
 import {
   textInputValidate,
-} from "../textInputComp/textInputConstants";
+} from "./textInputConstants";
 import { jsonControl } from "comps/controls/codeControl";
 import {
   submitEvent,
@@ -65,8 +65,8 @@ const Wrapper = styled.div<{
   .rc-textarea {
     background-color:${(props) => props.$style.background};
     padding:${(props) => props.$style.padding};
-    text-transform:${(props)=>props.$style.textTransform};
-    text-decoration:${(props)=>props.$style.textDecoration};
+    text-transform:${(props) => props.$style.textTransform};
+    text-decoration:${(props) => props.$style.textDecoration};
     margin: 0px 3px 0px 3px !important;
   }
 
@@ -96,14 +96,14 @@ let MentionTmpComp = (function () {
     viewRef: RefControl<TextAreaRef>,
     allowClear: BoolControl,
     autoHeight: AutoHeightControl,
-    style: styleControl(InputLikeStyle , 'style'),
-    animationStyle: styleControl(AnimationStyle , 'animationStyle'),
-    mentionList: jsonControl(checkMentionListData, {"@":["John Doe","Jane Doe","Michael Smith","Emily Davis","Robert Johnson","Patricia Brown","William Jones","Jennifer Miller","David Wilson","Linda Moore"],"#":["#lowcode","#automation","#appbuilder","#nocode","#workflow","#draganddrop","#rapiddevelopment","#digitaltransformation","#integration","#api"]}),
+    style: styleControl(InputLikeStyle, 'style'),
+    animationStyle: styleControl(AnimationStyle, 'animationStyle'),
+    mentionList: jsonControl(checkMentionListData, { "@": ["John Doe", "Jane Doe", "Michael Smith", "Emily Davis", "Robert Johnson", "Patricia Brown", "William Jones", "Jennifer Miller", "David Wilson", "Linda Moore"], "#": ["#lowcode", "#automation", "#appbuilder", "#nocode", "#workflow", "#draganddrop", "#rapiddevelopment", "#digitaltransformation", "#integration", "#api"] }),
     onEvent: eventHandlerControl(EventOptions),
     invalid: booleanExposingStateControl("invalid"),
   };
 
-  return new UICompBuilder(childrenMap, (props) => {  
+  return new UICompBuilder(childrenMap, (props) => {
     const { mentionList } = props;
     const [validateState, setvalidateState] = useState({});
     const [activationFlag, setActivationFlag] = useState(false);
@@ -262,10 +262,10 @@ let MentionTmpComp = (function () {
         {["layout", "both"].includes(useContext(EditorContext).editorModeStatus) && (
           <>
             <Section name={sectionNames.style}>
-            {children.style.getPropertyView()}
+              {children.style.getPropertyView()}
             </Section>
             <Section name={sectionNames.animationStyle} hasTooltip={true}>
-            {children.animationStyle.getPropertyView()}
+              {children.animationStyle.getPropertyView()}
             </Section>
           </>
         )}

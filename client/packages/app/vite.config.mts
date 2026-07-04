@@ -62,7 +62,7 @@ export const viteConfig: UserConfig = {
   resolve: {
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     alias: {
-      '@lowcoder-ee': path.resolve(__dirname, '../lowcoder/src'),
+      '@lowcoder-ee': path.resolve(__dirname, '../app/src'),
     },
   },
   base,
@@ -253,7 +253,7 @@ export const viteConfig: UserConfig = {
       },
     }),
     viteTsconfigPaths({
-      projects: ['../lowcoder/tsconfig.json', '../lowcoder-design/tsconfig.json'],
+      projects: ['../app/tsconfig.json', '../lowcoder-design/tsconfig.json'],
     }),
     svgrPlugin({
       svgrOptions: {

@@ -1,6 +1,6 @@
 {
-  "name": "lowcoder-frontend",
-  "version": "2.7.6",
+  "name": "secale-designer-frontend",
+  "version": "0.0.1",
   "type": "module",
   "private": true,
   "workspaces": [
@@ -10,14 +10,14 @@
     "node": "^14.18.0 || >=16.0.0"
   },
   "scripts": {
-    "start": "yarn workspace lowcoder start",
+    "start": "yarn workspace secale-designer-app start",
     "start-win": "SECALE_API_SERVICE_URL=http://localhost:3000 yarn start",
-    "start:ee": "REACT_APP_EDITION=enterprise yarn workspace lowcoder start",
+    "start:ee": "REACT_APP_EDITION=enterprise yarn workspace secale-designer-app start",
     "translate": "node --loader ts-node/esm ./scripts/translate.js",
     "build": "yarn node ./scripts/build.js",
     "build:ee": "REACT_APP_EDITION=enterprise yarn node ./scripts/build.js",
     "test": "jest && yarn workspace lowcoder-comps test",
-    "prepare": "yarn workspace lowcoder prepare",
+    "prepare": "yarn workspace secale-designer-app prepare",
     "build:core": "yarn workspace lowcoder-core build",
     "test:core": "yarn workspace lowcoder-core test",
     "lint": "eslint . --fix"

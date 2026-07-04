@@ -1,4 +1,4 @@
-// client/packages/lowcoder/src/pages/setting/environments/routes/WorkspaceRoutes.tsx
+// client/packages/appsrc/pages/setting/environments/routes/WorkspaceRoutes.tsx
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { WorkspaceProvider } from "../context/WorkspaceContext";
@@ -10,7 +10,7 @@ import WorkspaceDetail from "../WorkspaceDetail";
  */
 const WorkspaceRoutes: React.FC = () => {
   const { path } = useRouteMatch();
-  
+
   return (
     <WorkspaceProvider>
       <Switch>
@@ -18,7 +18,7 @@ const WorkspaceRoutes: React.FC = () => {
         <Route exact path={path}>
           <WorkspaceDetail />
         </Route>
-        
+
         {/* You can add more workspace-specific routes here */}
       </Switch>
     </WorkspaceProvider>

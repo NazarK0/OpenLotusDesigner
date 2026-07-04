@@ -1,4 +1,4 @@
-name: Build lowcoder docker images
+name: Build Secale docker images
 
 on:
   workflow_dispatch:

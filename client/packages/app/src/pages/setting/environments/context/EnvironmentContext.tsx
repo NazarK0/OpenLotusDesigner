@@ -1,4 +1,4 @@
-// client/packages/lowcoder/src/pages/setting/environments/context/EnvironmentContext.tsx
+// client/packages/appsrc/pages/setting/environments/context/EnvironmentContext.tsx
 import React, {
   createContext,
   useContext,
@@ -14,13 +14,13 @@ import { Environment } from "../types/environment.types";
 interface EnvironmentContextState {
   // Environments list data
   environments: Environment[];
-  
+
   // Loading state
   isLoading: boolean;
-  
+
   // Error state
   error: string | null;
-  
+
   // Functions
   refreshEnvironments: () => Promise<void>;
 }
@@ -57,7 +57,7 @@ export const EnvironmentProvider: React.FC<ProviderProps> = ({
   const fetchEnvironments = useCallback(async () => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       const data = await getEnvironmentsWithLicenseStatus();
       setEnvironments(data);

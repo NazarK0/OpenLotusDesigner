@@ -1,1 +1,1 @@
-import "../../lowcoder/src/global";
+import '../../app/src/global';

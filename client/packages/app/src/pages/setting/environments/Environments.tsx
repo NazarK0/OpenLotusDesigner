@@ -1,4 +1,4 @@
-// client/packages/lowcoder/src/pages/setting/environments/Environments.tsx
+// client/packages/appsrc/pages/setting/environments/Environments.tsx
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import EnvironmentRoutes from "./routes/EnvironmentRoutes";

@@ -44,7 +44,7 @@ async function downloadBuiltinPlugin(name) {
   const packageRes = await axios.get(`https://registry.npmjs.com/${name}/latest`);
   const tarball = packageRes.data.dist.tarball;
   const tarballFileName = `${name}.tgz`;
-  const targetDir = `./packages/lowcoder/build/${name}/latest`;
+  const targetDir = `./packages/appbuild/${name}/latest`;
 
   console.log(chalk.blue`tarball: ${tarball}`);
 
@@ -60,7 +60,7 @@ async function buildBuiltinPlugin(name) {
   console.log();
   console.log(chalk.cyan`plugin ${name} building...`);
 
-  const targetDir = `./packages/lowcoder/build/${name}/latest`;
+  const targetDir = `./packages/appbuild/${name}/latest`;
   shell.mkdir("-p", targetDir);
 
   shell.exec(`yarn workspace ${name} build_only`, { fatal: true });
@@ -78,7 +78,7 @@ shell.set("-e");
 const start = Date.now();
 
 //prettier-ignore
-shell.env["REACT_APP_COMMIT_ID"] = shell.env["REACT_APP_COMMIT_ID"] || shell.exec("git rev-parse --short HEAD", {silent: true}).trim();
+shell.env["REACT_APP_COMMIT_ID"] = shell.env["REACT_APP_COMMIT_ID"] || shell.exec("git rev-parse --short HEAD", { silent: true }).trim();
 
 // Treating warnings as errors when process.env.CI = true.
 shell.env["CI"] = false;
@@ -104,7 +104,7 @@ if (process.argv.includes("--internal-deploy")) {
   const deployDir = shell.env["DEPLOY_DIR"];
   console.log();
   console.log(chalk.cyan`deploying...`);
-  shell.exec("docker cp ./packages/lowcoder/build lowcoder-fe:/var/www/", { fatal: true });
+  shell.exec("docker cp ./packages/appbuild lowcoder-fe:/var/www/", { fatal: true });
   shell.exec(
     `docker exec lowcoder-fe /bin/sh -c "cd /var/www/ && rm -rf ${deployDir} && mv build ${deployDir}"`,
     { fatal: true }

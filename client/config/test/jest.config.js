@@ -18,15 +18,15 @@ export default {
     "react-markdown": path.resolve(currentDir, "./mocks/react-markdown.js"),
     "\\.md\\?url$": path.resolve(currentDir, "./mocks/markdown-url-module.js"),
     "^@lowcoder-ee(.*)$": path.resolve(
-      currentDir, "../../packages/lowcoder/src/$1"
+      currentDir, "../../packages/app/src/$1"
     ),
-    "lowcoder-sdk": path.resolve(currentDir, "../../packages/lowcoder/src/index.sdk"),
+    "lowcoder-sdk": path.resolve(currentDir, "../../packages/appsrc/index.sdk"),
   },
   globals,
   // roots: ["<rootDir>/src"],
   modulePaths: [
     "<rootDir>/src",
-    path.resolve(currentDir, "../../packages/lowcoder/src"),
+    path.resolve(currentDir, "../../packages/app/src"),
     path.resolve(currentDir, "../../packages/lowcoder-comps/src"),
     path.resolve(currentDir, "../../packages/lowcoder-design/src"),
   ],

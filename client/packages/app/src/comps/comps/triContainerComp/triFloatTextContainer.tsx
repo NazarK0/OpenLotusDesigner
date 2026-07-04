@@ -15,7 +15,7 @@ import {
   gridItemCompToGridItems,
   InnerGrid,
 } from "../containerComp/containerView";
-import { TriContainerViewProps } from "../triContainerComp/triContainerCompBuilder";
+import { TriContainerViewProps } from "./triContainerCompBuilder";
 import { getBackgroundStyle } from "@lowcoder-ee/util/styleUtils";
 
 const getStyle = (style: TextContainerStyleType) => {
@@ -69,13 +69,13 @@ const getStyle = (style: TextContainerStyleType) => {
       background-color: transparent;
     }
   `;
-  }
+}
 
 const Wrapper = styled.div<{
   $style: ContainerStyleType;
   $animationStyle?: AnimationStyleType;
 }>`
-${props=>props.$animationStyle&&props.$animationStyle}
+${props => props.$animationStyle && props.$animationStyle}
   display: flex;
   flex-flow: column;
   height: 100%;
@@ -87,34 +87,34 @@ ${props=>props.$animationStyle&&props.$animationStyle}
   ${props => getBackgroundStyle(props.$style)}
 `;
 
-const FloatTextWrapper = styled.div<{ $style: TextContainerStyleType, $horizontalAlignment : any }>`
+const FloatTextWrapper = styled.div<{ $style: TextContainerStyleType, $horizontalAlignment: any }>`
   ${(props) => props.$style && getStyle(props.$style)}
   text-align: ${(props) => props.$horizontalAlignment};
   padding: ${(props) => props.$style.padding};
   margin: ${(props) => props.$style.margin};
 `;
 
-const HeaderInnerGrid = styled(InnerGrid)<{
+const HeaderInnerGrid = styled(InnerGrid) <{
   $backgroundColor: string,
   $headerBackgroundImage: string,
   $headerBackgroundImageSize: string,
   $headerBackgroundImageRepeat: string,
   $headerBackgroundImageOrigin: string,
   $headerBackgroundImagePosition: string,
- }>`
+}>`
   overflow: visible;
   border-radius: 0;
   ${props => getBackgroundStyle({
-    background: props.$backgroundColor,
-    backgroundImage: props.$headerBackgroundImage,
-    backgroundImageSize: props.$headerBackgroundImageSize,
-    backgroundImageRepeat: props.$headerBackgroundImageRepeat,
-    backgroundImageOrigin: props.$headerBackgroundImageOrigin,
-    backgroundImagePosition: props.$headerBackgroundImagePosition,
-  })}
+  background: props.$backgroundColor,
+  backgroundImage: props.$headerBackgroundImage,
+  backgroundImageSize: props.$headerBackgroundImageSize,
+  backgroundImageRepeat: props.$headerBackgroundImageRepeat,
+  backgroundImageOrigin: props.$headerBackgroundImageOrigin,
+  backgroundImagePosition: props.$headerBackgroundImagePosition,
+})}
 `;
 
-const BodyInnerGrid = styled(InnerGrid)<{
+const BodyInnerGrid = styled(InnerGrid) <{
   $showBorder: boolean;
   $borderColor: string;
   $borderWidth: string;
@@ -129,16 +129,16 @@ const BodyInnerGrid = styled(InnerGrid)<{
   flex: 1;
   border-radius: 0;
   ${props => getBackgroundStyle({
-    background: props.$backgroundColor,
-    backgroundImage: props.$bodyBackgroundImage,
-    backgroundImageSize: props.$bodyBackgroundImageSize,
-    backgroundImageRepeat: props.$bodyBackgroundImageRepeat,
-    backgroundImageOrigin: props.$bodyBackgroundImageOrigin,
-    backgroundImagePosition: props.$bodyBackgroundImagePosition,
-  })}
+  background: props.$backgroundColor,
+  backgroundImage: props.$bodyBackgroundImage,
+  backgroundImageSize: props.$bodyBackgroundImageSize,
+  backgroundImageRepeat: props.$bodyBackgroundImageRepeat,
+  backgroundImageOrigin: props.$bodyBackgroundImageOrigin,
+  backgroundImagePosition: props.$bodyBackgroundImagePosition,
+})}
 `;
 
-const FooterInnerGrid = styled(InnerGrid)<{
+const FooterInnerGrid = styled(InnerGrid) <{
   $showBorder: boolean;
   $backgroundColor: string;
   $borderColor: string;
@@ -154,13 +154,13 @@ const FooterInnerGrid = styled(InnerGrid)<{
   ${(props) => props.$backgroundColor && `background-color: ${props.$backgroundColor};`}
   border-radius: 0;
   ${props => getBackgroundStyle({
-    background: props.$backgroundColor,
-    backgroundImage: props.$footerBackgroundImage,
-    backgroundImageSize: props.$footerBackgroundImageSize,
-    backgroundImageRepeat: props.$footerBackgroundImageRepeat,
-    backgroundImageOrigin: props.$footerBackgroundImageOrigin,
-    backgroundImagePosition: props.$footerBackgroundImagePosition,
-  })}
+  background: props.$backgroundColor,
+  backgroundImage: props.$footerBackgroundImage,
+  backgroundImageSize: props.$footerBackgroundImageSize,
+  backgroundImageRepeat: props.$footerBackgroundImageRepeat,
+  backgroundImageOrigin: props.$footerBackgroundImageOrigin,
+  backgroundImagePosition: props.$footerBackgroundImagePosition,
+})}
 `;
 
 export type TriContainerProps = TriContainerViewProps & {
@@ -177,7 +177,7 @@ export type TriContainerProps = TriContainerViewProps & {
 };
 
 export function TriContainer(props: TriContainerProps) {
-  const {container, text, animationStyle} = props;
+  const { container, text, animationStyle } = props;
   const { showHeader, showFooter, horizontalGridCells } = container;
   // When the header and footer are not displayed, the body must be displayed
   const showBody = container.showBody || (!showHeader && !showFooter);
@@ -197,7 +197,7 @@ export function TriContainer(props: TriContainerProps) {
     headerStyle,
     bodyStyle,
     footerStyle,
-  } = container; 
+  } = container;
 
   return (
     <Wrapper $style={style} $animationStyle={animationStyle}>
@@ -220,7 +220,7 @@ export function TriContainer(props: TriContainerProps) {
             $headerBackgroundImageSize={headerStyle?.headerBackgroundImageSize}
             $headerBackgroundImagePosition={headerStyle?.headerBackgroundImagePosition}
             $headerBackgroundImageOrigin={headerStyle?.headerBackgroundImageOrigin}
-            style={{ padding: headerStyle.containerHeaderPadding}} />
+            style={{ padding: headerStyle.containerHeaderPadding }} />
         </BackgroundColorContext.Provider>
       )}
       {showBody && (
@@ -251,7 +251,7 @@ export function TriContainer(props: TriContainerProps) {
                   height: "100%",
                   ...container.bodyStyle
                 }}
-                />
+              />
               <FloatTextWrapper
                 $style={props.style}
                 $horizontalAlignment={props.horizontalAlignment}

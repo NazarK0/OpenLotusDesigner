@@ -90,7 +90,7 @@ module.exports = {
       "@lowcoder-ee": path.resolve(__dirname, "../lowcoder/src"),
     },
     plugins: [new TsconfigPathsPlugin({
-      configFile: "../lowcoder/tsconfig.json"
+      configFile: "../app/tsconfig.json"
     })]
   },
   output: {
@@ -120,7 +120,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         "./index.html",
-        { 
+        {
           from: 'src/custom_component/*.html', // Path to source files
           to: '[name][ext]', // Pattern for the output, '[name][ext]' will keep the original file name and extension
         },

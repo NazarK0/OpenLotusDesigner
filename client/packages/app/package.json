@@ -1,6 +1,6 @@
 {
-  "name": "lowcoder",
-  "version": "2.7.6",
+  "name": "secale-designer-app",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "main": "src/index.sdk.ts",

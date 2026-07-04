@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path, { dirname } from "node:path";
 import axios from "axios";
 
-const translationsDir = './packages/lowcoder/src/i18n/locales'; // Directory where language files are stored
+const translationsDir = './packages/appsrc/i18n/locales'; // Directory where language files are stored
 const masterLang = 'en'; // Master language code
 const DEEPL_API_URL = 'https://api.deepl.com/v2/translate';
 

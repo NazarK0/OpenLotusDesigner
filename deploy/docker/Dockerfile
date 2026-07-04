@@ -157,7 +157,7 @@ RUN usermod --login lowcoder --uid 9001 nginx \
   && mkdir -p /lowcoder/assets
 
 # Copy lowcoder client
-COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder/build/ /lowcoder/client
+COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/appbuild/ /lowcoder/client
 # Copy lowcoder components
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
 # Copy lowcoder SDK
@@ -235,7 +235,7 @@ RUN usermod --login lowcoder --uid 9001 nginx \
   && mkdir -p /lowcoder/assets
 
 # Copy lowcoder client
-COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/lowcoder/build/ /lowcoder/client
+COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/appbuild/ /lowcoder/client
 # Copy lowcoder components
 COPY --chown=lowcoder:lowcoder --from=build-client-ee /lowcoder-client-ee/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
 # Copy lowcoder SDK
@@ -321,7 +321,7 @@ COPY deploy/docker/frontend/ssl-params.conf /etc/nginx/ssl-params.conf
 
 # Add lowcoder frontend
 #    copy lowcoder client
-COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder/build/ /lowcoder/client
+COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/appbuild/ /lowcoder/client
 #    copy lowcoder components
 COPY --chown=lowcoder:lowcoder --from=build-client /lowcoder-client/packages/lowcoder-comps/lowcoder-comps /lowcoder/client-comps
 #    copy lowcoder SDK
