@@ -438,7 +438,7 @@ export default function Header(props: HeaderProps) {
   const headerStart = (
     <>
       <StyledLink onClick={() => history.push(ALL_APPLICATIONS_URL)}>
-        {/* {REACT_APP_OPENLOTUS_SHOW_BRAND === 'true' ? REACT_APP_OPENLOTUS_CUSTOM_LOGO_SQUARE !== "" ? <img src={REACT_APP_OPENLOTUS_CUSTOM_LOGO_SQUARE } height={24} width={24} alt="logo" /> :<LogoIcon /> :  <LogoHome />} */}
+        {/* {REACT_APP_SECALE_SHOW_BRAND === 'true' ? REACT_APP_SECALE_CUSTOM_LOGO_SQUARE !== "" ? <img src={REACT_APP_SECALE_CUSTOM_LOGO_SQUARE } height={24} width={24} alt="logo" /> :<LogoIcon /> :  <LogoHome />} */}
         {brandingSettings?.config_set?.logo
           ? (
             Boolean(brandingSettings?.orgId)
@@ -698,7 +698,7 @@ export function AppHeader() {
 
   const headerStart = (
     <StyledLink onClick={() => history.push(ALL_APPLICATIONS_URL)}>
-      {/* {REACT_APP_OPENLOTUS_SHOW_BRAND === 'true' ?  REACT_APP_OPENLOTUS_CUSTOM_LOGO !== "" ? <img src={REACT_APP_OPENLOTUS_CUSTOM_LOGO}  height={28} alt="logo" /> :<LogoWithName branding={!user.orgDev} /> : <LogoHome />} */}
+      {/* {REACT_APP_SECALE_SHOW_BRAND === 'true' ?  REACT_APP_SECALE_CUSTOM_LOGO !== "" ? <img src={REACT_APP_SECALE_CUSTOM_LOGO}  height={28} alt="logo" /> :<LogoWithName branding={!user.orgDev} /> : <LogoHome />} */}
       {brandingSettings?.config_set?.logo
         ? (
           Boolean(brandingSettings?.orgId)

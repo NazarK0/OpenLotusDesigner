@@ -1,19 +1,19 @@
 auth:
   api-key:
-    secret: ${OPENLOTUS_API_KEY_SECRET:5a41b090758b39b226603177ef48d73ae9839dd458ccb7e66f7e7cc028d5a50b}
+    secret: ${SECALE_API_KEY_SECRET:5a41b090758b39b226603177ef48d73ae9839dd458ccb7e66f7e7cc028d5a50b}
   email:
-    enable: ${OPENLOTUS_EMAIL_AUTH_ENABLED:true}
-    enable-register: ${OPENLOTUS_EMAIL_SIGNUP_ENABLED:true}
-  workspace-creation: ${OPENLOTUS_CREATE_WORKSPACE_ON_SIGNUP:true}
+    enable: ${SECALE_EMAIL_AUTH_ENABLED:true}
+    enable-register: ${SECALE_EMAIL_SIGNUP_ENABLED:true}
+  workspace-creation: ${SECALE_CREATE_WORKSPACE_ON_SIGNUP:true}
 
 spring:
   data:
     mongodb:
       authentication-database: admin
       auto-index-creation: false
-      uri: ${OPENLOTUS_MONGODB_URL:mongodb://lowcoder:secret123@mongodb:27017/lowcoder?retryWrites=true&loadBalanced=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256}
+      uri: ${SECALE_MONGODB_URL:mongodb://lowcoder:secret123@mongodb:27017/lowcoder?retryWrites=true&loadBalanced=false&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256}
     redis:
-      url: ${OPENLOTUS_REDIS_URL:redis://redis:6379}
+      url: ${SECALE_REDIS_URL:redis://redis:6379}
   main:
     allow-bean-definition-overriding: false
     allow-circular-references: false
@@ -22,20 +22,20 @@ spring:
   webflux:
     base-path: /
   mail:
-    host: ${OPENLOTUS_ADMIN_SMTP_HOST:localhost}
-    port: ${OPENLOTUS_ADMIN_SMTP_PORT:587}
-    username: ${OPENLOTUS_ADMIN_SMTP_USERNAME:info@localhost}
-    password: ${OPENLOTUS_ADMIN_SMTP_PASSWORD:s3cr3t}
+    host: ${SECALE_ADMIN_SMTP_HOST:localhost}
+    port: ${SECALE_ADMIN_SMTP_PORT:587}
+    username: ${SECALE_ADMIN_SMTP_USERNAME:info@localhost}
+    password: ${SECALE_ADMIN_SMTP_PASSWORD:s3cr3t}
     properties:
       mail:
         smtp:
-          auth: ${OPENLOTUS_ADMIN_SMTP_AUTH:true}
+          auth: ${SECALE_ADMIN_SMTP_AUTH:true}
           ssl:
-            enable: ${OPENLOTUS_ADMIN_SMTP_SSL_ENABLED:false}
+            enable: ${SECALE_ADMIN_SMTP_SSL_ENABLED:false}
             checkserveridentity: false
           starttls:
-            enable: ${OPENLOTUS_ADMIN_SMTP_STARTTLS_ENABLED:true}
-            required: ${OPENLOTUS_ADMIN_SMTP_STARTTLS_REQUIRED:true}
+            enable: ${SECALE_ADMIN_SMTP_STARTTLS_ENABLED:true}
+            required: ${SECALE_ADMIN_SMTP_STARTTLS_REQUIRED:true}
         transport:
           protocol: smtp
   mvc:
@@ -51,16 +51,16 @@ server:
   shutdown: graceful
 
 default:
-  orgs-per-user: ${OPENLOTUS_MAX_ORGS_PER_USER:100}
-  org-member-count: ${OPENLOTUS_MAX_MEMBERS_PER_ORG:1000}
-  org-group-count: ${OPENLOTUS_MAX_GROUPS_PER_ORG:100}
-  org-app-count: ${OPENLOTUS_MAX_APPS_PER_ORG:1000}
-  developer-count: ${OPENLOTUS_MAX_DEVELOPERS:50}
-  api-rate-limit: ${OPENLOTUS_API_RATE_LIMIT:50}
-  query-timeout: ${OPENLOTUS_DEFAULT_QUERY_TIMEOUT:10}
+  orgs-per-user: ${SECALE_MAX_ORGS_PER_USER:100}
+  org-member-count: ${SECALE_MAX_MEMBERS_PER_ORG:1000}
+  org-group-count: ${SECALE_MAX_GROUPS_PER_ORG:100}
+  org-app-count: ${SECALE_MAX_APPS_PER_ORG:1000}
+  developer-count: ${SECALE_MAX_DEVELOPERS:50}
+  api-rate-limit: ${SECALE_API_RATE_LIMIT:50}
+  query-timeout: ${SECALE_DEFAULT_QUERY_TIMEOUT:10}
 
 common:
-  cookie-name: ${OPENLOTUS_COOKIE_NAME:OPENLOTUS_CE_SELFHOST_TOKEN}
+  cookie-name: ${SECALE_COOKIE_NAME:SECALE_CE_SELFHOST_TOKEN}
   product: lowcoder
   domain:
     default-value: lowcoder.org
@@ -69,33 +69,33 @@ common:
   apiVersion: 1.2
   block-hound-enable: false
   encrypt:
-    password: ${OPENLOTUS_DB_ENCRYPTION_PASSWORD:lowcoder.org}
-    salt: ${OPENLOTUS_DB_ENCRYPTION_SALT:lowcoder.org}
+    password: ${SECALE_DB_ENCRYPTION_PASSWORD:lowcoder.org}
+    salt: ${SECALE_DB_ENCRYPTION_SALT:lowcoder.org}
   security:
-    corsAllowedDomainString: ${OPENLOTUS_CORS_DOMAINS:*}
+    corsAllowedDomainString: ${SECALE_CORS_DOMAINS:*}
   js-executor:
-    host: ${OPENLOTUS_NODE_SERVICE_URL:http://node-service:6060}
-    password: ${OPENLOTUS_NODE_SERVICE_SECRET:}
-    salt: ${OPENLOTUS_NODE_SERVICE_SECRET_SALT:}
-  max-query-request-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
-  max-query-response-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
-  max-upload-size: ${OPENLOTUS_MAX_REQUEST_SIZE:20m}
-  max-query-timeout: ${OPENLOTUS_MAX_QUERY_TIMEOUT:120}
+    host: ${SECALE_NODE_SERVICE_URL:http://node-service:6060}
+    password: ${SECALE_NODE_SERVICE_SECRET:}
+    salt: ${SECALE_NODE_SERVICE_SECRET_SALT:}
+  max-query-request-size: ${SECALE_MAX_REQUEST_SIZE:20m}
+  max-query-response-size: ${SECALE_MAX_REQUEST_SIZE:20m}
+  max-upload-size: ${SECALE_MAX_REQUEST_SIZE:20m}
+  max-query-timeout: ${SECALE_MAX_QUERY_TIMEOUT:120}
   workspace:
-    mode: ${OPENLOTUS_WORKSPACE_MODE:SAAS}
+    mode: ${SECALE_WORKSPACE_MODE:SAAS}
   plugin-dirs:
-    - ${OPENLOTUS_PLUGINS_DIR:../plugins}
+    - ${SECALE_PLUGINS_DIR:../plugins}
   super-admin:
-    username: ${OPENLOTUS_SUPERUSER_USERNAME:admin@localhost}
-    password: ${OPENLOTUS_SUPERUSER_PASSWORD:}
+    username: ${SECALE_SUPERUSER_USERNAME:admin@localhost}
+    password: ${SECALE_SUPERUSER_PASSWORD:}
   marketplace:
-    private-mode: ${OPENLOTUS_MARKETPLACE_PRIVATE_MODE:true}
-  lowcoder-public-url: ${OPENLOTUS_PUBLIC_URL:http://frontend:3000}
-  notifications-email-sender: ${OPENLOTUS_EMAIL_NOTIFICATIONS_SENDER:info@localhost}
+    private-mode: ${SECALE_MARKETPLACE_PRIVATE_MODE:true}
+  lowcoder-public-url: ${SECALE_PUBLIC_URL:http://frontend:3000}
+  notifications-email-sender: ${SECALE_EMAIL_NOTIFICATIONS_SENDER:info@localhost}
   cookie:
-    max-age-in-hours: ${OPENLOTUS_COOKIE_MAX_AGE:24}
+    max-age-in-hours: ${SECALE_COOKIE_MAX_AGE:24}
   query:
-    app-snapshot-keep-duration: ${OPENLOTUS_APP_SNAPSHOT_RETENTIONTIME:30}
+    app-snapshot-keep-duration: ${SECALE_APP_SNAPSHOT_RETENTIONTIME:30}
 
 material:
   mongodb-grid-fs:

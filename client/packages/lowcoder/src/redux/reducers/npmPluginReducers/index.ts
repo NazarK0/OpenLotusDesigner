@@ -63,7 +63,7 @@ const npmPluginReducer = createReducer(initialState, {
       },
     };
   },
-  [ReduxActionTypes.OPENLOTUS_COMPS_LOADING]: (
+  [ReduxActionTypes.SECALE_COMPS_LOADING]: (
     state: NPMPluginState,
     action: ReduxAction<{ loading: boolean }>,
   ): NPMPluginState => {

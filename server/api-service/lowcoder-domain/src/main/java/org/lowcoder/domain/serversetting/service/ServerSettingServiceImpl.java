@@ -24,22 +24,22 @@ public class ServerSettingServiceImpl implements ServerSettingService {
     private final Environment environment;
     private final ServerSettingRepository repository;
 
-    private final List<String> EXCLUDED_KEYS = List.of("OPENLOTUS_MONGODB_EXPOSED",
-    "OPENLOTUS_PUID",
-    "OPENLOTUS_PGID",
-    "OPENLOTUS_MONGODB_URL",
-    "OPENLOTUS_REDIS_URL",
-    "OPENLOTUS_DB_ENCRYPTION_PASSWORD",
-    "OPENLOTUS_DB_ENCRYPTION_SALT",
-    "OPENLOTUS_API_KEY_SECRET",
-    "OPENLOTUS_ADMIN_SMTP_HOST",
-    "OPENLOTUS_ADMIN_SMTP_PORT",
-    "OPENLOTUS_ADMIN_SMTP_USERNAME",
-    "OPENLOTUS_ADMIN_SMTP_PASSWORD",
-    "OPENLOTUS_SUPERUSER_PASSWORD",
-    "OPENLOTUS_SUPERUSER_USERNAME",
-    "OPENLOTUS_NODE_SERVICE_SECRET",
-    "OPENLOTUS_NODE_SERVICE_SECRET_SALT");
+    private final List<String> EXCLUDED_KEYS = List.of("SECALE_MONGODB_EXPOSED",
+    "SECALE_PUID",
+    "SECALE_PGID",
+    "SECALE_MONGODB_URL",
+    "SECALE_REDIS_URL",
+    "SECALE_DB_ENCRYPTION_PASSWORD",
+    "SECALE_DB_ENCRYPTION_SALT",
+    "SECALE_API_KEY_SECRET",
+    "SECALE_ADMIN_SMTP_HOST",
+    "SECALE_ADMIN_SMTP_PORT",
+    "SECALE_ADMIN_SMTP_USERNAME",
+    "SECALE_ADMIN_SMTP_PASSWORD",
+    "SECALE_SUPERUSER_PASSWORD",
+    "SECALE_SUPERUSER_USERNAME",
+    "SECALE_NODE_SERVICE_SECRET",
+    "SECALE_NODE_SERVICE_SECRET_SALT");
 
     @Override
     public Mono<Map<String, String>> getServerSettingsMap() {
@@ -52,7 +52,7 @@ public class ServerSettingServiceImpl implements ServerSettingService {
         Map<String, String> defaults = getEnvironmentVariablesDefaults();
 
         Map<String, String> envVariables = new TreeMap<>(System.getenv().entrySet().stream()
-                .filter(entry -> StringUtils.startsWith(entry.getKey(), "OPENLOTUS_"))
+                .filter(entry -> StringUtils.startsWith(entry.getKey(), "SECALE_"))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)));
 
         Map<String, String> merged = new TreeMap<>(defaults);
@@ -87,7 +87,7 @@ public class ServerSettingServiceImpl implements ServerSettingService {
                 if (names.length > 0) {
                     Arrays.stream(names).forEach(name -> {
                         String rawValue = Objects.toString(propertySource.getProperty(name), "");
-                        if (rawValue != null && StringUtils.contains(rawValue, "${OPENLOTUS_")) {
+                        if (rawValue != null && StringUtils.contains(rawValue, "${SECALE_")) {
                             String defaultValue = StringUtils.substringBetween(rawValue, "${", "}");
                             String[] keyValue = StringUtils.split(defaultValue, ":");
                             if (keyValue.length == 2 && !defaults.containsKey(keyValue[0])) {

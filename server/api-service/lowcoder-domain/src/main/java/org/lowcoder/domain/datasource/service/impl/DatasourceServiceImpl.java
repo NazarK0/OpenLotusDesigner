@@ -97,8 +97,8 @@ public class DatasourceServiceImpl implements DatasourceService {
             return Mono.just(Datasource.JS_CODE);
         }
 
-        // if (StringUtils.equals(id, Datasource.OPENLOTUS_API_ID)) {
-        //     return Mono.just(Datasource.OPENLOTUS_API);
+        // if (StringUtils.equals(id, Datasource.SECALE_API_ID)) {
+        //     return Mono.just(Datasource.SECALE_API);
         // }
 
         return repository.findById(id);
@@ -111,7 +111,7 @@ public class DatasourceServiceImpl implements DatasourceService {
                         StringUtils.equals(id, Datasource.QUICK_REST_API_ID) ||
                         StringUtils.equals(id, Datasource.QUICK_GRAPHQL_ID) ||
                         StringUtils.equals(id, Datasource.JS_CODE_ID)
-                        // || StringUtils.equals(id, Datasource.OPENLOTUS_API_ID)
+                        // || StringUtils.equals(id, Datasource.SECALE_API_ID)
                 )
                 .map(id -> {
                     if (StringUtils.equals(id, Datasource.QUICK_REST_API_ID)) {
@@ -134,7 +134,7 @@ public class DatasourceServiceImpl implements DatasourceService {
                         !(StringUtils.equals(id, Datasource.QUICK_REST_API_ID) ||
                         StringUtils.equals(id, Datasource.QUICK_GRAPHQL_ID) ||
                         StringUtils.equals(id, Datasource.JS_CODE_ID)
-                        // || StringUtils.equals(id, Datasource.OPENLOTUS_API_ID)
+                        // || StringUtils.equals(id, Datasource.SECALE_API_ID)
                         )
                 ).toList())
         );

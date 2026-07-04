@@ -158,7 +158,7 @@ function ActionSelectorControlPropertyView(props: PropertyViewProps) {
         lineHeight={300}
         value={comp.children.compType.getView()}
         options={ActionOptions.filter((i) => {
-          if (window.__OPENLOTUS_ORG__) {
+          if (window.__SECALE_ORG__) {
             return devActions.includes(i.value);
           }
           if (editorState?.isModule()) {

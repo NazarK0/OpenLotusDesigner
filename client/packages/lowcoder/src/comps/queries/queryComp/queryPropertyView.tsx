@@ -1,4 +1,4 @@
-import { OLD_OPENLOTUS_DATASOURCE } from "@lowcoder-ee/constants/datasourceConstants";
+import { OLD_SECALE_DATASOURCE } from "@lowcoder-ee/constants/datasourceConstants";
 import { manualTriggerResource, ResourceType } from "@lowcoder-ee/constants/queryConstants";
 import { PreparedStatementConfig } from "api/datasourceApi";
 import { isCompWithPropertyView } from "comps/utils/propertyUtils";

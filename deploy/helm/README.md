@@ -64,7 +64,7 @@ $ helm delete -n lowcoder my-lowcoder
 | `global.config.nodeServiceSecret`       | Secret used for encrypting traffic between API service and Node service - CHANGE IT! |                |
 | `global.config.nodeServiceSalt`         | Salt used for encrypting traffic between API service and Node service   - CHANGE IT! |                |
 | `global.config.apiServiceUrl`           | URL to api-service server if using external one (disabled by default)             |                |
-| `global.cookie.name`                    | Name of the lowcoder application cookie                                           | `OPENLOTUS_CE_SELFHOST_TOKEN` |
+| `global.cookie.name`                    | Name of the lowcoder application cookie                                           | `SECALE_CE_SELFHOST_TOKEN` |
 | `global.cookie.maxAge`                  | Lowcoder application cookie max age in hours                                      | `24`           |
 | `global.defaults.maxOrgsPerUser`        | Maximum allowed organizations per user                                            | `100`          |
 | `global.defaults.maxMembersPerOrg`      | Maximum allowed members per organization                                          | `1000`         |

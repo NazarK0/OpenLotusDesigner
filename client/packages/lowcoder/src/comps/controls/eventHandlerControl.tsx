@@ -206,7 +206,7 @@ const EventHandlerControlPropertyView = (props: {
     const messageHandler = {
       compType: "message",
     };
-    const isInDevIde = !!window.__OPENLOTUS_ORG__;
+    const isInDevIde = !!window.__SECALE_ORG__;
     const newHandler = {
       name: eventConfigs[0].value,
       handler: isInDevIde ? messageHandler : queryExecHandler,

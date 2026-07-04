@@ -79,7 +79,7 @@ export default function PageSkeleton(props: IProps) {
     </SkeletonWrapper>
   );
 
-  // {/* headerStart={REACT_APP_OPENLOTUS_SHOW_BRAND === 'true' ? REACT_APP_OPENLOTUS_CUSTOM_LOGO !== "" ? <img src={REACT_APP_OPENLOTUS_CUSTOM_LOGO} alt="logo" /> :<StyledLogoWithName branding={true} /> : <StyledLogoHome branding={true} />} */}
+  // {/* headerStart={REACT_APP_SECALE_SHOW_BRAND === 'true' ? REACT_APP_SECALE_CUSTOM_LOGO !== "" ? <img src={REACT_APP_SECALE_CUSTOM_LOGO} alt="logo" /> :<StyledLogoWithName branding={true} /> : <StyledLogoHome branding={true} />} */}
 
   return (
     <Layout>

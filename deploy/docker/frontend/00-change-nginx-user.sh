@@ -2,8 +2,8 @@
 
 set -e
 
-USER_ID=${OPENLOTUS_PUID:=9001}
-GROUP_ID=${OPENLOTUS_PGID:=9001}
+USER_ID=${SECALE_PUID:=9001}
+GROUP_ID=${SECALE_PGID:=9001}
 CLIENT_ROOT=/lowcoder/client
 
 # Update ID of lowcoder user if required

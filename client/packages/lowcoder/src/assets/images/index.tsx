@@ -1,16 +1,22 @@
 //window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-import { ReactComponent as LogoIcon } from "./Lowcoder-Logo.svg";
+import LogoIcon from "./Logo.png";
 import { ReactComponent as LogoWithNameIcon } from "./logo-with-name-home.svg";
 import { ReactComponent as LogoHomeIcon } from "./logo-with-name-home.svg";
 
 export { default as favicon } from "./favicon.ico";
 
 export const Logo = (props: { branding?: boolean }) => {
-  return <LogoIcon />;
+  return (
+    <div>
+      <img src={LogoIcon} alt="Description of the asset" />
+    </div>
+  );
 };
+
 export const LogoWithName = (props: { branding?: boolean }) => {
   return <LogoWithNameIcon />;
 };
-export const LogoHome = (props: { branding?: boolean }) => {
+
+export const LogoHome = () => {
   return <LogoHomeIcon />;
 };

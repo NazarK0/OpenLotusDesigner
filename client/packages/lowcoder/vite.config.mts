@@ -17,8 +17,8 @@ import { terser } from 'rollup-plugin-terser';
 
 dotenv.config();
 
-const apiServiceUrl = process.env.OPENLOTUS_API_SERVICE_URL;
-const nodeServiceUrl = process.env.OPENLOTUS_NODE_SERVICE_URL;
+const apiServiceUrl = process.env.SECALE_API_SERVICE_URL;
+const nodeServiceUrl = process.env.SECALE_NODE_SERVICE_URL;
 const nodeEnv = process.env.NODE_ENV ?? 'development';
 const isDev = nodeEnv === 'development';
 const isVisualizerEnabled = !!process.env.ENABLE_VISUALIZER;
@@ -29,9 +29,9 @@ const base = ensureLastSlash(process.env.PUBLIC_URL);
 
 if (!apiServiceUrl && isDev) {
   console.log();
-  console.log(chalk.red`OPENLOTUS_API_SERVICE_URL is required.\n`);
+  console.log(chalk.red`SECALE_API_SERVICE_URL is required.\n`);
   console.log(
-    chalk.cyan`Start with command: OPENLOTUS_API_SERVICE_URL=\{backend-api-addr\} yarn start`,
+    chalk.cyan`Start with command: SECALE_API_SERVICE_URL=\{backend-api-addr\} yarn start`,
   );
   console.log();
   process.exit(1);

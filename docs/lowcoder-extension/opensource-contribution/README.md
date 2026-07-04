@@ -190,7 +190,7 @@ yarn install
 4. Start dev server:
 
 ```bash
-OPENLOTUS_API_SERVICE_URL=http://localhost:3000 yarn start
+SECALE_API_SERVICE_URL=http://localhost:3000 yarn start
 ```
 
 After the dev server starts successfully, it will be automatically opened in the default browser. The local Frontend App is served by [Vite](https://vitejs.dev/). It chooses an available port automatically. Typically, it will open at [http://localhost:8000](http://localhost:8000)

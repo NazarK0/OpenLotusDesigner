@@ -9,8 +9,8 @@ const ITERATIONS = 1024;
 const DIGEST = "sha1";
 
 // You must set these to match your Java config:
-const PASSWORD = process.env.OPENLOTUS_NODE_SERVICE_SECRET || "lowcoderpwd";
-const SALT_HEX = process.env.OPENLOTUS_NODE_SERVICE_SECRET_SALT || "lowcodersalt";
+const PASSWORD = process.env.SECALE_NODE_SERVICE_SECRET || "lowcoderpwd";
+const SALT_HEX = process.env.SECALE_NODE_SERVICE_SECRET_SALT || "lowcodersalt";
 
 /**
  * Derive key from password and salt using PBKDF2WithHmacSHA1 (Spring's default).

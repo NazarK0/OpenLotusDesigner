@@ -30,10 +30,7 @@ router.use(prefix, express.static(path.join(__dirname, "static")));
 /** Logging */
 router.use(morgan("dev"));
 
-const MAX_REQUEST_SIZE_BYTES = parseRequestLimitNoLib(
-  process.env.OPENLOTUS_MAX_REQUEST_SIZE,
-  "50mb",
-);
+const MAX_REQUEST_SIZE_BYTES = parseRequestLimitNoLib(process.env.SECALE_MAX_REQUEST_SIZE, "50mb");
 
 /** Parse the request */
 router.use(express.urlencoded({ extended: false, limit: MAX_REQUEST_SIZE_BYTES }));
@@ -140,7 +137,7 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
   const m = s.match(/^(\d+(?:\.\d+)?)(b|kb|k|mb|m|gb|g|tb|t|pb|p)$/u);
   if (!m) {
     throw new Error(
-      `Invalid OPENLOTUS_MAX_REQUEST_SIZE: "${s0}". ` +
+      `Invalid SECALE_MAX_REQUEST_SIZE: "${s0}". ` +
         `Use bytes ("52428800"), long units ("50mb"), or Spring units ("50m").`,
     );
   }
@@ -149,7 +146,7 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
   const unit = m[2];
 
   if (!Number.isFinite(value) || value <= 0) {
-    throw new Error(`Invalid OPENLOTUS_MAX_REQUEST_SIZE numeric value: "${m[1]}"`);
+    throw new Error(`Invalid SECALE_MAX_REQUEST_SIZE numeric value: "${m[1]}"`);
   }
 
   // Binary multipliers (base 1024)
@@ -198,7 +195,7 @@ function parseRequestLimitNoLib(input: unknown, fallback: string = "50mb"): numb
 
   // Guard: must fit into a safe integer
   if (!Number.isFinite(bytes) || bytes <= 0 || !Number.isSafeInteger(Math.floor(bytes))) {
-    throw new Error(`OPENLOTUS_MAX_REQUEST_SIZE too large or invalid: "${s0}"`);
+    throw new Error(`SECALE_MAX_REQUEST_SIZE too large or invalid: "${s0}"`);
   }
 
   return Math.floor(bytes);

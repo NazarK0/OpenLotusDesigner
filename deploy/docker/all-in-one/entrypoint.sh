@@ -2,12 +2,12 @@
 
 set -e
 
-export USER_ID=${OPENLOTUS_PUID:=9001}
-export GROUP_ID=${OPENLOTUS_PGID:=9001}
+export USER_ID=${SECALE_PUID:=9001}
+export GROUP_ID=${SECALE_PGID:=9001}
 
 # Set default variable values
 echo "Overriding default environment variables:"
-for line in `grep '^[ \t]*OPENLOTUS_.*$' /lowcoder/etc/default.env`; do
+for line in `grep '^[ \t]*SECALE_.*$' /lowcoder/etc/default.env`; do
     VARNAME=`echo ${line} | sed -e 's/^\([A-Z0-9_]\+\)\([ \t]*=[ \t]*\)\(.*\)$/\1/'`
     if [ -z "$(eval echo \"\$$VARNAME\")" ]; then
         export $(eval echo "${line}")
@@ -30,16 +30,16 @@ if [ ! "$(id --group lowcoder)" -eq ${GROUP_ID} ]; then
 fi;
 
 # Update host on which mongo is supposed to listen
-# If OPENLOTUS_MONGODB_EXPOSED is true, it will listen on all interfaces
-if [ "${OPENLOTUS_MONGODB_EXPOSED}" = "true" ]; then
+# If SECALE_MONGODB_EXPOSED is true, it will listen on all interfaces
+if [ "${SECALE_MONGODB_EXPOSED}" = "true" ]; then
     export MONGO_LISTEN_HOST="0.0.0.0"
 else
     export MONGO_LISTEN_HOST="127.0.0.1"
 fi;
 
 # Set the default mongodb connection string if not set explicitly
-if [ -z "${OPENLOTUS_MONGODB_URL}" ]; then
-    export OPENLOTUS_MONGODB_URL="mongodb://localhost:27017/lowcoder?authSource=admin"
+if [ -z "${SECALE_MONGODB_URL}" ]; then
+    export SECALE_MONGODB_URL="mongodb://localhost:27017/lowcoder?authSource=admin"
 fi;
 
 LOGS="/lowcoder-stacks/logs"
@@ -71,27 +71,27 @@ mkdir -p ${SUPERVISOR_ENABLED}
 rm -f ${SUPERVISOR_ENABLED}/*.conf
 
 # Enable redis if configured to run
-if [ "${OPENLOTUS_REDIS_ENABLED:=true}" = "true" ]; then
+if [ "${SECALE_REDIS_ENABLED:=true}" = "true" ]; then
     ln ${SUPERVISOR_AVAILABLE}/01-redis.conf ${SUPERVISOR_ENABLED}/01-redis.conf
 fi;
 
 # Enable mongodb if configured to run
-if [ "${OPENLOTUS_MONGODB_ENABLED:=true}" = "true" ]; then
+if [ "${SECALE_MONGODB_ENABLED:=true}" = "true" ]; then
     ln ${SUPERVISOR_AVAILABLE}/02-mongodb.conf ${SUPERVISOR_ENABLED}/02-mongodb.conf
 fi;
 
 # Enable api-service if configured to run
-if [ "${OPENLOTUS_API_SERVICE_ENABLED:=true}" = "true" ]; then
+if [ "${SECALE_API_SERVICE_ENABLED:=true}" = "true" ]; then
     ln ${SUPERVISOR_AVAILABLE}/10-api-service.conf ${SUPERVISOR_ENABLED}/10-api-service.conf
 fi;
 
 # Enable node-service if configured to run
-if [ "${OPENLOTUS_NODE_SERVICE_ENABLED:=true}" = "true" ]; then
+if [ "${SECALE_NODE_SERVICE_ENABLED:=true}" = "true" ]; then
     ln ${SUPERVISOR_AVAILABLE}/11-node-service.conf ${SUPERVISOR_ENABLED}/11-node-service.conf
 fi;
 
 # Enable frontend if configured to run
-if [ "${OPENLOTUS_FRONTEND_ENABLED:=true}" = "true" ]; then
+if [ "${SECALE_FRONTEND_ENABLED:=true}" = "true" ]; then
     ln ${SUPERVISOR_AVAILABLE}/20-frontend.conf ${SUPERVISOR_ENABLED}/20-frontend.conf
 fi;
 

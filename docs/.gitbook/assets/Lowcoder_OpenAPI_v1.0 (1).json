@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": { "title": "Lowcoder API", "version": "1.0" },
   "servers": [{ "url": "/" }],
-  "security": [{ "OPENLOTUS_CE_SELFHOST_TOKEN": [] }],
+  "security": [{ "SECALE_CE_SELFHOST_TOKEN": [] }],
   "paths": {
     "/api/users/password": {
       "put": {
@@ -3471,9 +3471,9 @@
       }
     },
     "securitySchemes": {
-      "OPENLOTUS_CE_SELFHOST_TOKEN": {
+      "SECALE_CE_SELFHOST_TOKEN": {
         "type": "apiKey",
-        "name": "OPENLOTUS_CE_SELFHOST_TOKEN",
+        "name": "SECALE_CE_SELFHOST_TOKEN",
         "in": "cookie"
       }
     }

@@ -20,7 +20,7 @@ export default defineConfig({
   define: {
     ...define,
     "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV || "development"),
-    __OPENLOTUS_ORG__: JSON.stringify({}),
+    __SECALE_ORG__: JSON.stringify({}),
   },
   assetsInclude: ["**/*.md"],
   resolve: {

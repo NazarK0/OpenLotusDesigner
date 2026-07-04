@@ -129,7 +129,7 @@ export default function FormLoginSteps(props: FormLoginProps) {
   }, [isFormLoginEnabled, signinEnabled]);
 
   const isEnterpriseMode = useMemo(() => {
-    return serverSettings?.OPENLOTUS_WORKSPACE_MODE === "ENTERPRISE" || serverSettings?.OPENLOTUS_WORKSPACE_MODE === "SINGLEWORKSPACE";
+    return serverSettings?.SECALE_WORKSPACE_MODE === "ENTERPRISE" || serverSettings?.SECALE_WORKSPACE_MODE === "SINGLEWORKSPACE";
   }, [serverSettings]);
 
   useEffect(() => {
@@ -147,12 +147,12 @@ export default function FormLoginSteps(props: FormLoginProps) {
 
   useEffect(() => {
     const {
-      OPENLOTUS_EMAIL_SIGNUP_ENABLED,
-      OPENLOTUS_EMAIL_AUTH_ENABLED,
+      SECALE_EMAIL_SIGNUP_ENABLED,
+      SECALE_EMAIL_AUTH_ENABLED,
     } = serverSettings;
 
-    setSignupEnabled(OPENLOTUS_EMAIL_SIGNUP_ENABLED === 'true');
-    setSigninEnabled(OPENLOTUS_EMAIL_AUTH_ENABLED === 'true');
+    setSignupEnabled(SECALE_EMAIL_SIGNUP_ENABLED === 'true');
+    setSigninEnabled(SECALE_EMAIL_AUTH_ENABLED === 'true');
   }, [serverSettings]);
 
   const afterLoginSuccess = () => {

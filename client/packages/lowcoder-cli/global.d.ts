@@ -1,7 +1,7 @@
 declare global {
   interface Window {
     printPerf: () => void;
-    __OPENLOTUS_ORG__?: {};
+    __SECALE_ORG__?: {};
   }
 }
 

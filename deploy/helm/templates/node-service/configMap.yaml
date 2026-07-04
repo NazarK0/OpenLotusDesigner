@@ -12,10 +12,10 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 data:
-  OPENLOTUS_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
-  OPENLOTUS_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
+  SECALE_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
+  SECALE_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
   {{- if .Values.global.config.apiServiceUrl }}
-  OPENLOTUS_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | quote }}
+  SECALE_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | quote }}
   {{- else }}
-  OPENLOTUS_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
+  SECALE_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
   {{- end }}

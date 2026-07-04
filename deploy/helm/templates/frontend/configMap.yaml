@@ -11,18 +11,18 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 data:
-  OPENLOTUS_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
-  OPENLOTUS_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
+  SECALE_PUID: {{ .Values.global.config.userId | default "9001" | quote }}
+  SECALE_PGID: {{ .Values.global.config.groupId | default "9001" | quote }}
   {{- if .Values.global.config.apiServiceUrl }}
-  OPENLOTUS_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | trimSuffix "/" | quote }}
+  SECALE_API_SERVICE_URL: {{ .Values.global.config.apiServiceUrl | trimSuffix "/" | quote }}
   {{- else }}
-  OPENLOTUS_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
+  SECALE_API_SERVICE_URL: "http://{{ $name }}-api-service:{{ .Values.apiService.service.port }}"
   {{- end }}
   {{- if .Values.global.config.nodeServiceUrl }}
-  OPENLOTUS_NODE_SERVICE_URL: {{ .Values.global.config.nodeServiceUrl | trimSuffix "/" | quote }}
+  SECALE_NODE_SERVICE_URL: {{ .Values.global.config.nodeServiceUrl | trimSuffix "/" | quote }}
   {{- else }}
-  OPENLOTUS_NODE_SERVICE_URL: "http://{{ $name }}-node-service:{{ .Values.nodeService.service.port }}"
+  SECALE_NODE_SERVICE_URL: "http://{{ $name }}-node-service:{{ .Values.nodeService.service.port }}"
   {{- end }}
-  OPENLOTUS_MAX_REQUEST_SIZE: {{ .Values.global.config.maxRequestSize | default "20m" | quote }}
-  OPENLOTUS_MAX_QUERY_TIMEOUT: {{ .Values.global.config.maxQueryTimeout | default "120" | quote }}
+  SECALE_MAX_REQUEST_SIZE: {{ .Values.global.config.maxRequestSize | default "20m" | quote }}
+  SECALE_MAX_QUERY_TIMEOUT: {{ .Values.global.config.maxQueryTimeout | default "120" | quote }}
 

@@ -16,7 +16,7 @@ export const selectNpmPluginVersionAction = (packageName: string, version: strin
 });
 
 export const setLowcoderCompsLoading = (loading: boolean) => ({
-  type: ReduxActionTypes.OPENLOTUS_COMPS_LOADING,
+  type: ReduxActionTypes.SECALE_COMPS_LOADING,
   payload: {
     loading,
   },

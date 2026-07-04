@@ -53,7 +53,7 @@ const Wrapper = styled.div`
 const editorState = new EditorState(new RootComp({ value: {} }), () => { });
 
 export default function ComponentPlayground() {
-  window.__OPENLOTUS_ORG__ = {};
+  window.__SECALE_ORG__ = {};
 
   const params = useParams<{ name: UICompType; dsl: string }>();
   const dsl = JSON.parse(decodeURIComponent(params.dsl || ""));

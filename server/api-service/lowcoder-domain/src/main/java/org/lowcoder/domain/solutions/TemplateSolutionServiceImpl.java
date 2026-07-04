@@ -126,7 +126,7 @@ public class TemplateSolutionServiceImpl implements TemplateSolutionService {
                     }
 
                     /* if (datasource.isLegacyLowcoderApi()) {
-                        return Mono.just(Datasource.OPENLOTUS_API.getId());
+                        return Mono.just(Datasource.SECALE_API.getId());
                     } */
                     return createNewDatasourceFrom(organizationId, visitorId, datasource);
                 });

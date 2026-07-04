@@ -38,19 +38,19 @@ public class Datasource extends HasIdAndAuditing {
 
     public static final String QUICK_REST_API_ID = "#QUICK_REST_API";
     public static final String QUICK_GRAPHQL_ID = "#QUICK_GRAPHQL";
-    // public static final String OPENLOTUS_API_ID = "#OPENLOTUS_API";
+    // public static final String SECALE_API_ID = "#SECALE_API";
     public static final String JS_CODE_ID = "#JS_CODE";
 
     private static final Set<String> SYSTEM_STATIC_IDS = Set.of(
             QUICK_REST_API_ID,
             QUICK_GRAPHQL_ID,
-            // OPENLOTUS_API_ID,
+            // SECALE_API_ID,
             JS_CODE_ID
     );
 
     public static final Datasource QUICK_REST_API;
     public static final Datasource QUICK_GRAPHQL_API;
-    // public static final Datasource OPENLOTUS_API;
+    // public static final Datasource SECALE_API;
     public static final Datasource JS_CODE;
 
     static {
@@ -68,12 +68,12 @@ public class Datasource extends HasIdAndAuditing {
         QUICK_GRAPHQL_API.setCreationSource(SYSTEM_STATIC.getValue());
         QUICK_GRAPHQL_API.setDetailConfig(GraphQLDatasourceConfig.EMPTY_CONFIG);
 
-        /* OPENLOTUS_API = new Datasource();
-        OPENLOTUS_API.setId(OPENLOTUS_API_ID);
-        OPENLOTUS_API.setName("Lowcoder API");
-        OPENLOTUS_API.setType(OPENLOTUS_API);
-        OPENLOTUS_API.setCreationSource(SYSTEM_STATIC.getValue());
-        OPENLOTUS_API.setDetailConfig(LowcoderApiDatasourceConfig.INSTANCE); */
+        /* SECALE_API = new Datasource();
+        SECALE_API.setId(SECALE_API_ID);
+        SECALE_API.setName("Lowcoder API");
+        SECALE_API.setType(SECALE_API);
+        SECALE_API.setCreationSource(SYSTEM_STATIC.getValue());
+        SECALE_API.setDetailConfig(LowcoderApiDatasourceConfig.INSTANCE); */
 
         JS_CODE = new Datasource();
         JS_CODE.setId(JS_CODE_ID);
@@ -127,8 +127,8 @@ public class Datasource extends HasIdAndAuditing {
             return LocaleUtils.getMessage(locale, "QUICK_GRAPHQL_DATASOURCE_NAME");
         }
 
-        /* if (OPENLOTUS_API_ID.equals(datasourceId)) {
-            return LocaleUtils.getMessage(locale, "OPENLOTUS_DATASOURCE_NAME");
+        /* if (SECALE_API_ID.equals(datasourceId)) {
+            return LocaleUtils.getMessage(locale, "SECALE_DATASOURCE_NAME");
         } */
 
         if (JS_CODE_ID.equals(datasourceId)) {

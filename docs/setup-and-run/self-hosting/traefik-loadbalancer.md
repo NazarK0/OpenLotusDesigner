@@ -31,11 +31,11 @@ services:
       ENCRYPTION_PASSWORD: "somethingveryunique"
       ENCRYPTION_SALT: "somethingalsounique"
       CORS_ALLOWED_DOMAINS: "*"
-      OPENLOTUS_API_KEY_SECRET: "b37717ee6de1003921c4445a3088af17ee316a6fad270737282a8ce2acf29832"
-      OPENLOTUS_API_SERVICE_URL: "http://localhost:8080"
-      OPENLOTUS_NODE_SERVICE_URL: "http://localhost:6060"
-      OPENLOTUS_MAX_REQUEST_SIZE: 20m
-      OPENLOTUS_MAX_QUERY_TIMEOUT: 120
+      SECALE_API_KEY_SECRET: "b37717ee6de1003921c4445a3088af17ee316a6fad270737282a8ce2acf29832"
+      SECALE_API_SERVICE_URL: "http://localhost:8080"
+      SECALE_NODE_SERVICE_URL: "http://localhost:6060"
+      SECALE_MAX_REQUEST_SIZE: 20m
+      SECALE_MAX_QUERY_TIMEOUT: 120
     volumes:
       - ./lowcoder-stacks:/lowcoder-stacks
     restart: unless-stopped

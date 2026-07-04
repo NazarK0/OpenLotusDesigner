@@ -47,7 +47,7 @@ yarn install
 4. Start dev server: 
 
 ```bash
-OPENLOTUS_API_SERVICE_URL=http://localhost:3000 yarn start
+SECALE_API_SERVICE_URL=http://localhost:3000 yarn start
 ```
 
 5. After dev server starts successfully, it will be automatically opened in the default browser.

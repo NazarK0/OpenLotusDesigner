@@ -118,11 +118,11 @@ export function ThirdPartyAuth(props: {
   const [disableButtons, setDisableButtons] = useState(false);
 
   const isEmailLoginEnabled = useMemo(() => {
-    return isFormLoginEnabled && serverSettings.OPENLOTUS_EMAIL_AUTH_ENABLED === 'true';
+    return isFormLoginEnabled && serverSettings.SECALE_EMAIL_AUTH_ENABLED === 'true';
   }, [isFormLoginEnabled, serverSettings]);
 
   const isEmailSignupEnabled = useMemo(() => {
-    return serverSettings.OPENLOTUS_EMAIL_SIGNUP_ENABLED === 'true';
+    return serverSettings.SECALE_EMAIL_SIGNUP_ENABLED === 'true';
   }, [serverSettings]);
 
   if (systemConfigFetching) {

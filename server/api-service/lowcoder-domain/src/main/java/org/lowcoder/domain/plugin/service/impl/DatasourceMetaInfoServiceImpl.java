@@ -63,8 +63,8 @@ public class DatasourceMetaInfoServiceImpl implements DatasourceMetaInfoService 
             .connectionPool(ClientBasedConnectionPool.class)
             .build();
 
-    /* private static final DatasourceMetaInfo OPENLOTUS_API = DatasourceMetaInfo.builder()
-            .type(DatasourceMetaInfoConstants.OPENLOTUS_API)
+    /* private static final DatasourceMetaInfo SECALE_API = DatasourceMetaInfo.builder()
+            .type(DatasourceMetaInfoConstants.SECALE_API)
             .displayName("Lowcoder API")
             .pluginExecutorKey("lowcoder-api-plugin")
             .connectionPool(StatelessConnectionPool.class)

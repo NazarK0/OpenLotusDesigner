@@ -8,7 +8,7 @@ On [api-service.lowcoder.cloud](https://api-service.lowcoder.cloud/api/docs/webj
 
 ### Session Cookie
 
-In application properties of the API-Service - or as ENV Variable in Docker setups, you can set a name for the Cookie. In our Examples`OPENLOTUS_CE_SELFHOST_TOKEN`
+In application properties of the API-Service - or as ENV Variable in Docker setups, you can set a name for the Cookie. In our Examples`SECALE_CE_SELFHOST_TOKEN`
 
 With this value, you can then authenticate API Calls.
 
@@ -16,7 +16,7 @@ If no user is logged In, API Calls will get executed in the name of "Anonymous U
 
 If you are logged in, the Cookie of the currently logged-in user will be used to make API Calls in the name of the current user. This means, that Access Rights to different Functions are automatically applied by the Role of the User. (Admin, Member, Visitor)
 
-If you want to use the API from outside of Lowcoder, you need to authenticate first and use the Cookie as the `OPENLOTUS_CE_SELFHOST_TOKEN` API key in every API Call.
+If you want to use the API from outside of Lowcoder, you need to authenticate first and use the Cookie as the `SECALE_CE_SELFHOST_TOKEN` API key in every API Call.
 
 ```bash
 // Login a User on Lowcoder by eMail
@@ -50,7 +50,7 @@ In particular, you will get back the Cookie to authorize the next API Calls.
 
 ```
 // Cookie in Response
-OPENLOTUS_CE_SELFHOST_TOKEN=<generatedCookieValue>; Path=/; Max-Age=2592000; Expires=Tue, 25 Jul 2023 13:51:31 GMT; HttpOnly; SameSite=Lax
+SECALE_CE_SELFHOST_TOKEN=<generatedCookieValue>; Path=/; Max-Age=2592000; Expires=Tue, 25 Jul 2023 13:51:31 GMT; HttpOnly; SameSite=Lax
 ```
 
 For all the next API Calls you need to set the Cookie
@@ -59,7 +59,7 @@ For all the next API Calls you need to set the Cookie
 // API Requests authorized
 curl --location 'http://localhost:3000//api/users/currentUser' \
 --header 'Accept: */*' \
---header 'Cookie: OPENLOTUS_CE_SELFHOST_TOKEN=<generatedCookieValue>'
+--header 'Cookie: SECALE_CE_SELFHOST_TOKEN=<generatedCookieValue>'
 ```
 
 ### API Key
@@ -71,7 +71,7 @@ As a logged-in user, you can use the API based on the Cookie to generate an API 
 ```bash
 // use the Lowcoder API to generate the JWT based API Key
 curl --location '<your lowcoder location>/api/auth/api-key' \
---header 'cookie: OPENLOTUS_CE_SELFHOST_TOKEN=<generatedCookieValue>;' \
+--header 'cookie: SECALE_CE_SELFHOST_TOKEN=<generatedCookieValue>;' \
 --header 'Content-Type: application/json' \
 --data '{
     "name":"<your api key name>",
@@ -152,7 +152,7 @@ Since Lowcoder v2.0.0, it is possible to use the Lowcoder REST API inside of App
 
 <figure><img src="../.gitbook/assets/Lowcoder API  Create Datasource.png" alt=""><figcaption><p>Connect the Lowcoder API as OpenAPI Datasource</p></figcaption></figure>
 
-Use your defined `OPENLOTUS_CE_SELFHOST_TOKEN` as API Key Auth. It will be automatically replaced by the adapted Cookie if a User is logged in.
+Use your defined `SECALE_CE_SELFHOST_TOKEN` as API Key Auth. It will be automatically replaced by the adapted Cookie if a User is logged in.
 
 Also, you can use the API Key to interact with the Lowcoder API as an impersonated user.
 

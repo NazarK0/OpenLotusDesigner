@@ -38,7 +38,7 @@ global:
     snapshotRetentionTime: 30
     marketplacePrivateMode: true
   cookie:
-    name: OPENLOTUS_CE_SELFHOST_TOKEN
+    name: SECALE_CE_SELFHOST_TOKEN
     maxAge: 24
   defaults:
     maxOrgsPerUser: 100

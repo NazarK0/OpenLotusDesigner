@@ -52,7 +52,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -134,7 +134,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -201,7 +201,7 @@
                             "header": [
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -246,7 +246,7 @@
                         "header": [
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -312,7 +312,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -375,7 +375,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -450,7 +450,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -519,7 +519,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -583,7 +583,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -640,7 +640,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -715,7 +715,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -782,7 +782,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -854,7 +854,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -924,7 +924,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -1004,7 +1004,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -1089,7 +1089,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -1188,7 +1188,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1284,7 +1284,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1369,7 +1369,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1454,7 +1454,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1550,7 +1550,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1623,7 +1623,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1691,7 +1691,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1759,7 +1759,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1827,7 +1827,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1908,7 +1908,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -1983,7 +1983,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2054,7 +2054,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -2133,7 +2133,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -2206,7 +2206,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -2275,7 +2275,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -2349,7 +2349,7 @@
                         "header": [
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2413,7 +2413,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2475,7 +2475,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2547,7 +2547,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -2614,7 +2614,7 @@
                         "header": [
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2678,7 +2678,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -2751,7 +2751,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -2850,7 +2850,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -2943,7 +2943,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -3016,7 +3016,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -3078,7 +3078,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -3135,7 +3135,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -3207,7 +3207,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -3286,7 +3286,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3351,7 +3351,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -3417,7 +3417,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -3511,7 +3511,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3607,7 +3607,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3692,7 +3692,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3777,7 +3777,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3855,7 +3855,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -3941,7 +3941,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -4016,7 +4016,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -4078,7 +4078,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -4150,7 +4150,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -4226,7 +4226,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -4328,7 +4328,7 @@
                                   },
                                   {
                                     "description": "Added as a part of security scheme: apikey",
-                                    "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                    "key": "SECALE_CE_SELFHOST_TOKEN",
                                     "value": "<API Key>"
                                   }
                                 ],
@@ -4420,7 +4420,7 @@
                                   },
                                   {
                                     "description": "Added as a part of security scheme: apikey",
-                                    "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                    "key": "SECALE_CE_SELFHOST_TOKEN",
                                     "value": "<API Key>"
                                   }
                                 ],
@@ -4494,7 +4494,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -4575,7 +4575,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -4664,7 +4664,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -4744,7 +4744,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -4826,7 +4826,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -4906,7 +4906,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -4982,7 +4982,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5063,7 +5063,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5136,7 +5136,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5213,7 +5213,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -5287,7 +5287,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -5368,7 +5368,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -5460,7 +5460,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5554,7 +5554,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -5627,7 +5627,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -5698,7 +5698,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5769,7 +5769,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5840,7 +5840,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5910,7 +5910,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -5991,7 +5991,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6073,7 +6073,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -6149,7 +6149,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6230,7 +6230,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6302,7 +6302,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6356,7 +6356,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -6442,7 +6442,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -6524,7 +6524,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6602,7 +6602,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -6677,7 +6677,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6743,7 +6743,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -6820,7 +6820,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6889,7 +6889,7 @@
                         "header": [
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -6960,7 +6960,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7028,7 +7028,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7114,7 +7114,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7223,7 +7223,7 @@
                                   },
                                   {
                                     "description": "Added as a part of security scheme: apikey",
-                                    "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                    "key": "SECALE_CE_SELFHOST_TOKEN",
                                     "value": "<API Key>"
                                   }
                                 ],
@@ -7315,7 +7315,7 @@
                                   },
                                   {
                                     "description": "Added as a part of security scheme: apikey",
-                                    "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                    "key": "SECALE_CE_SELFHOST_TOKEN",
                                     "value": "<API Key>"
                                   }
                                 ],
@@ -7389,7 +7389,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7470,7 +7470,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7545,7 +7545,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -7626,7 +7626,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -7699,7 +7699,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -7770,7 +7770,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7843,7 +7843,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7905,7 +7905,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -7978,7 +7978,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -8055,7 +8055,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -8125,7 +8125,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -8204,7 +8204,7 @@
                       },
                       {
                         "description": "Added as a part of security scheme: apikey",
-                        "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                        "key": "SECALE_CE_SELFHOST_TOKEN",
                         "value": "<API Key>"
                       }
                     ],
@@ -8296,7 +8296,7 @@
                                   },
                                   {
                                     "description": "Added as a part of security scheme: apikey",
-                                    "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                    "key": "SECALE_CE_SELFHOST_TOKEN",
                                     "value": "<API Key>"
                                   }
                                 ],
@@ -8380,7 +8380,7 @@
                               },
                               {
                                 "description": "Added as a part of security scheme: apikey",
-                                "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                                "key": "SECALE_CE_SELFHOST_TOKEN",
                                 "value": "<API Key>"
                               }
                             ],
@@ -8467,7 +8467,7 @@
                           },
                           {
                             "description": "Added as a part of security scheme: apikey",
-                            "key": "OPENLOTUS_CE_SELFHOST_TOKEN",
+                            "key": "SECALE_CE_SELFHOST_TOKEN",
                             "value": "<API Key>"
                           }
                         ],
@@ -8518,7 +8518,7 @@
       },
       {
         "key": "key",
-        "value": "OPENLOTUS_CE_SELFHOST_TOKEN",
+        "value": "SECALE_CE_SELFHOST_TOKEN",
         "type": "string"
       },
       {
