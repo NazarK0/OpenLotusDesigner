@@ -31,7 +31,7 @@ import { defaultKeymap, history, historyKeymap, insertTab, indentLess, indentMor
 import { highlightSelectionMatches, searchKeymap } from "@codemirror/search";
 import { Diagnostic, linter, lintKeymap } from "@codemirror/lint";
 import { type EditorState, Prec } from "@codemirror/state";
-import { TernServer } from "base/codeEditor/completion/ternServer";
+import { TernServer } from "fragments/codeEditor/completion/ternServer";
 import {
   MutableRefObject,
   useCallback,
@@ -316,9 +316,9 @@ export function useChangeExtension(
   const onChangeRef = useRef<(state: EditorState) => void>();
   onChangeRef.current = extraOnChange
     ? (state: EditorState) => {
-        onChange?.(state);
-        extraOnChange(state);
-      }
+      onChange?.(state);
+      extraOnChange(state);
+    }
     : onChange;
   return useMemo(() => {
     const onUpdate = (update: ViewUpdate) => {

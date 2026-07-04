@@ -31,7 +31,7 @@ import {
   PageLayoutCompIcon,
   ShapesCompIcon,
   ChartCompIcon,
-  
+
 } from "lowcoder-design";
 import PreviewApp from "../../../../components/PreviewApp";
 import { trans } from "i18n";
@@ -65,8 +65,8 @@ background: linear-gradient(34deg, rgba(2,0,36,1) 0%, rgba(102,9,121,1) 35%, rgb
 `;
 
 const CodeEditor = lazy(
-  () => import("base/codeEditor/codeEditor")
-    .then(module => ({default: module.CodeEditor}))
+  () => import("fragments/codeEditor/codeEditor")
+    .then(module => ({ default: module.CodeEditor }))
 )
 
 type LocationProp = {
@@ -123,7 +123,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
   }
 
   componentDidMount() {
-    if(this.props.themeList?.length) {
+    if (this.props.themeList?.length) {
       this.findCurrentTheme();
     }
   }
@@ -172,7 +172,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
     this.setState({
       theme: {
         ...this.state.theme,
-        [params.themeSettingKey]: params.color || params.radius || params.chart || params.margin || params.padding  || params.borderWidth || params.borderStyle || params.fontFamily || params.showComponentLoadingIndicators || params.showDataLoadingIndicators || params.dataLoadingIndicator || params.gridColumns || params.gridRowHeight || params.gridRowCount || params.gridPaddingX || params.gridPaddingY || params.gridBgImage || params.gridBgImageRepeat || params.gridBgImageSize || params.gridBgImagePosition || params.gridBgImageOrigin,
+        [params.themeSettingKey]: params.color || params.radius || params.chart || params.margin || params.padding || params.borderWidth || params.borderStyle || params.fontFamily || params.showComponentLoadingIndicators || params.showDataLoadingIndicators || params.dataLoadingIndicator || params.gridColumns || params.gridRowHeight || params.gridRowCount || params.gridPaddingX || params.gridPaddingY || params.gridBgImage || params.gridBgImageRepeat || params.gridBgImageSize || params.gridBgImagePosition || params.gridBgImageOrigin,
       },
     });
   }
@@ -427,7 +427,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
           margin: '0 auto',
         }}>
           <h4>Oops! Theme not found.</h4>
-          <button onClick={() => history.push(THEME_SETTING)} style={{background: '#4965f2',border: '1px solid #4965f2', color: '#ffffff',borderRadius:'6px'}}>Back to Themes</button>
+          <button onClick={() => history.push(THEME_SETTING)} style={{ background: '#4965f2', border: '1px solid #4965f2', color: '#ffffff', borderRadius: '6px' }}>Back to Themes</button>
         </Flex>
       )
     }
@@ -474,9 +474,9 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
           <DetailContent>
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <ColorPickerCompIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.mainColor")}</h2>
+                <ColorPickerCompIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.mainColor")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px" }}>
+              <Card style={{ marginBottom: "20px", minHeight: "200px" }}>
                 <Flex gap={"middle"}>
                   <List
                     bordered
@@ -484,9 +484,9 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                     renderItem={(item) => (
                       <>
                         {item.title && (
-                            <List.Item>
-                              <DetailTitle>{item.title}</DetailTitle>
-                            </List.Item>
+                          <List.Item>
+                            <DetailTitle>{item.title}</DetailTitle>
+                          </List.Item>
                         )}
                         {item.items.map((colorItem) => (
                           <Tooltip key={colorItem.settingsKey} title={colorItem.desc} placement="right">
@@ -500,23 +500,23 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   this.configChange(params);
                                 }}
                               />
-                          </List.Item>
+                            </List.Item>
                           </Tooltip>
                         ))}
                       </>
                     )}
                   />
-                  <Divider type="vertical" style={{height: "610px"}}/>
-                  <PreviewApp style={{marginTop: '3px', height: "620px", width: "100%"}} theme={this.state.theme!} dsl={dsl} />
+                  <Divider type="vertical" style={{ height: "610px" }} />
+                  <PreviewApp style={{ marginTop: '3px', height: "620px", width: "100%" }} theme={this.state.theme!} dsl={dsl} />
                 </Flex>
               </Card>
             </ThemeSettingsView>
 
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <TextSizeIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.fonts")}</h2>
+                <TextSizeIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.fonts")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px" }}>
+              <Card style={{ marginBottom: "20px", minHeight: "200px" }}>
                 <Flex gap={"middle"}>
                   <List
                     bordered
@@ -524,43 +524,43 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                     renderItem={(item) => (
                       <>
                         {item.title && (
-                            <List.Item>
-                              <DetailTitle>{item.title}</DetailTitle>
-                            </List.Item>
+                          <List.Item>
+                            <DetailTitle>{item.title}</DetailTitle>
+                          </List.Item>
                         )}
                         {item.items.map((layoutSettingsItem) => (
                           <Tooltip key={layoutSettingsItem.settingsKey} title={layoutSettingsItem.desc} placement="right">
                             <List.Item key={layoutSettingsItem.settingsKey}>
-                              {layoutSettingsItem.type == "fontFamily" && 
+                              {layoutSettingsItem.type == "fontFamily" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
                                   fontFamily={layoutSettingsItem.value}
                                   configChange={(params) => {
                                     this.configChange(params);
-                                }}/>
+                                  }} />
                               }
                             </List.Item>
                             <List.Item>
-                              <div style={{ width: "200px", color: "#aaa"}}>Currently, the preview of Font-Family here in the Theme Settings may now show the right font. However, the Font Family Attribute comes into effect in all your apps, which uses this Theme.
-                              <br/><br/><a href="https://docs.lowcoder.cloud/lowcoder-documentation/build-applications/themes-and-styling#demo-2-custom-font-family" target="_blank">Remember, you neded to set the CSS inclue at App- or Workspace Level</a></div>
+                              <div style={{ width: "200px", color: "#aaa" }}>Currently, the preview of Font-Family here in the Theme Settings may now show the right font. However, the Font Family Attribute comes into effect in all your apps, which uses this Theme.
+                                <br /><br /><a href="https://docs.lowcoder.cloud/lowcoder-documentation/build-applications/themes-and-styling#demo-2-custom-font-family" target="_blank">Remember, you neded to set the CSS inclue at App- or Workspace Level</a></div>
                             </List.Item>
                           </Tooltip>
                         ))}
                       </>
                     )}
                   />
-                  <Divider type="vertical" style={{height: "610px"}}/>
-                  <PreviewApp style={{marginTop: '3px', height: "620px", width: "100%"}} theme={this.state.theme!} dsl={dsl} />
+                  <Divider type="vertical" style={{ height: "610px" }} />
+                  <PreviewApp style={{ marginTop: '3px', height: "620px", width: "100%" }} theme={this.state.theme!} dsl={dsl} />
                 </Flex>
               </Card>
             </ThemeSettingsView>
-            
+
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <PageLayoutCompIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.canvas")}</h2>
+                <PageLayoutCompIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.canvas")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px" }}>
+              <Card style={{ marginBottom: "20px", minHeight: "200px" }}>
                 <Flex gap={"middle"}>
                   <List
                     bordered
@@ -575,7 +575,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                         {item.items.map((canvasSettingItem) => (
                           <Tooltip key={canvasSettingItem.settingsKey} title={canvasSettingItem.desc} placement="right">
                             <List.Item key={canvasSettingItem.settingsKey}>
-                              {canvasSettingItem.type == "gridColumns" && 
+                              {canvasSettingItem.type == "gridColumns" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -585,7 +585,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridRowHeight" && 
+                              {canvasSettingItem.type == "gridRowHeight" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -595,7 +595,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridRowCount" && 
+                              {canvasSettingItem.type == "gridRowCount" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -605,7 +605,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridPaddingX" && 
+                              {canvasSettingItem.type == "gridPaddingX" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -615,7 +615,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridPaddingY" && 
+                              {canvasSettingItem.type == "gridPaddingY" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -636,7 +636,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridBgImage" && 
+                              {canvasSettingItem.type == "gridBgImage" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -646,7 +646,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridBgImageRepeat" && 
+                              {canvasSettingItem.type == "gridBgImageRepeat" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -656,7 +656,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridBgImageSize" && 
+                              {canvasSettingItem.type == "gridBgImageSize" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -666,7 +666,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridBgImagePosition" && 
+                              {canvasSettingItem.type == "gridBgImagePosition" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -676,7 +676,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {canvasSettingItem.type == "gridBgImageOrigin" && 
+                              {canvasSettingItem.type == "gridBgImageOrigin" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={canvasSettingItem.settingsKey}
                                   name={canvasSettingItem.name}
@@ -686,23 +686,23 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                          </List.Item>
+                            </List.Item>
                           </Tooltip>
                         ))}
                       </>
                     )}
                   />
-                  <Divider type="vertical" style={{height: "610px"}}/>
-                  <PreviewApp style={{marginTop: '3px', height: "620px", width: "100%"}} theme={this.state.theme!} dsl={dsl} />
+                  <Divider type="vertical" style={{ height: "610px" }} />
+                  <PreviewApp style={{ marginTop: '3px', height: "620px", width: "100%" }} theme={this.state.theme!} dsl={dsl} />
                 </Flex>
               </Card>
             </ThemeSettingsView>
 
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <PageLayoutCompIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.layout")}</h2>
+                <PageLayoutCompIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.layout")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px" }}>
+              <Card style={{ marginBottom: "20px", minHeight: "200px" }}>
                 <Flex gap={"middle"}>
                   <List
                     bordered
@@ -710,14 +710,14 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                     renderItem={(item) => (
                       <>
                         {item.title && (
-                            <List.Item>
-                              <DetailTitle>{item.title}</DetailTitle>
-                            </List.Item>
+                          <List.Item>
+                            <DetailTitle>{item.title}</DetailTitle>
+                          </List.Item>
                         )}
                         {item.items.map((layoutSettingsItem) => (
                           <Tooltip key={layoutSettingsItem.settingsKey} title={layoutSettingsItem.desc} placement="right">
                             <List.Item key={layoutSettingsItem.settingsKey}>
-                              {layoutSettingsItem.type == "radius" && 
+                              {layoutSettingsItem.type == "radius" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -727,7 +727,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "borderWidth" && 
+                              {layoutSettingsItem.type == "borderWidth" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -737,7 +737,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "borderStyle" && 
+                              {layoutSettingsItem.type == "borderStyle" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -747,7 +747,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "margin" && 
+                              {layoutSettingsItem.type == "margin" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -757,7 +757,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "padding" && 
+                              {layoutSettingsItem.type == "padding" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -767,7 +767,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "showComponentLoadingIndicators" && 
+                              {layoutSettingsItem.type == "showComponentLoadingIndicators" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -777,7 +777,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "showDataLoadingIndicators" && 
+                              {layoutSettingsItem.type == "showDataLoadingIndicators" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -787,7 +787,7 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   }}
                                 />
                               }
-                              {layoutSettingsItem.type == "dataLoadingIndicator" && 
+                              {layoutSettingsItem.type == "dataLoadingIndicator" &&
                                 <ThemeSettingsSelector
                                   themeSettingKey={layoutSettingsItem.settingsKey}
                                   name={layoutSettingsItem.name}
@@ -798,23 +798,23 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
                                   showVarName={false}
                                 />
                               }
-                          </List.Item>
+                            </List.Item>
                           </Tooltip>
                         ))}
                       </>
                     )}
                   />
-                  <Divider type="vertical" style={{height: "610px"}}/>
-                  <PreviewApp style={{marginTop: '3px', height: "620px", width: "100%"}} theme={this.state.theme!} dsl={dsl} />
+                  <Divider type="vertical" style={{ height: "610px" }} />
+                  <PreviewApp style={{ marginTop: '3px', height: "620px", width: "100%" }} theme={this.state.theme!} dsl={dsl} />
                 </Flex>
               </Card>
             </ThemeSettingsView>
 
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <ShapesCompIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.components")}</h2>
+                <ShapesCompIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.components")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px", height: "690px", overflow: "hidden"}}
+              <Card style={{ marginBottom: "20px", minHeight: "200px", height: "690px", overflow: "hidden" }}
               >
                 <ThemeCompPanel
                   theme={this.state.theme}
@@ -844,38 +844,38 @@ class ThemeDetailPage extends React.Component<ThemeDetailPageProps, ThemeDetailP
 
             <ThemeSettingsView>
               <StyleThemeSettingsCover>
-                <ChartCompIcon width={"36px"} style={{marginRight : "10px"}}/> <h2 style={{color: "#ffffff", marginTop : "8px"}}> {trans("theme.charts")}</h2>
+                <ChartCompIcon width={"36px"} style={{ marginRight: "10px" }} /> <h2 style={{ color: "#ffffff", marginTop: "8px" }}> {trans("theme.charts")}</h2>
               </StyleThemeSettingsCover>
-              <Card style={{ marginBottom: "20px", minHeight : "200px" }}>
+              <Card style={{ marginBottom: "20px", minHeight: "200px" }}>
                 <Flex gap={"middle"}>
                   <ChartInput>
-                  <List
-                    bordered>
-                    <List.Item>
-                      <div style={{width: "210px"}}>
-                        {trans("themeDetail.chartDesc")}
-                        <a target="_blank" href="https://echarts.apache.org/en/theme-builder.html" rel="noreferrer">
-                          {" "}
-                          {trans("themeDetail.echartsJson")}
-                        </a>
-                      </div>
-                    </List.Item>
-                    <List.Item style={{width : "260px", height: "370px", padding:"10px"}}>
-                      <CodeEditor
-                        value={this.state.theme?.chart || ""}
-                        onChange={(value) => this.configChange({
-                          themeSettingKey: "chart",
-                          chart: value.doc.toString() ? value.doc.toString() : undefined,
-                        })}
-                        styleName="window"
-                        codeType="PureJSON"
-                        showLineNum={false}
-                        bordered
-                      />
-                    </List.Item>
+                    <List
+                      bordered>
+                      <List.Item>
+                        <div style={{ width: "210px" }}>
+                          {trans("themeDetail.chartDesc")}
+                          <a target="_blank" href="https://echarts.apache.org/en/theme-builder.html" rel="noreferrer">
+                            {" "}
+                            {trans("themeDetail.echartsJson")}
+                          </a>
+                        </div>
+                      </List.Item>
+                      <List.Item style={{ width: "260px", height: "370px", padding: "10px" }}>
+                        <CodeEditor
+                          value={this.state.theme?.chart || ""}
+                          onChange={(value) => this.configChange({
+                            themeSettingKey: "chart",
+                            chart: value.doc.toString() ? value.doc.toString() : undefined,
+                          })}
+                          styleName="window"
+                          codeType="PureJSON"
+                          showLineNum={false}
+                          bordered
+                        />
+                      </List.Item>
                     </List>
                   </ChartInput>
-                  <Divider type="vertical" style={{height: "370px"}}/>
+                  <Divider type="vertical" style={{ height: "370px" }} />
                   <PreviewApp style={{ height: "380px", width: "100%", margin: "0" }} theme={this.state.theme!} dsl={chartDsl} />
                 </Flex>
               </Card>

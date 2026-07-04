@@ -26,7 +26,7 @@ import { DataSourceStructureTree } from "pages/editor/bottom/BottomMetaDrawer";
 import { trans } from "i18n";
 import { QueryLibraryResultPanel } from "components/resultPanel/QueryLibraryResultPanel";
 import { DatasourceStructure } from "api/datasourceApi";
-import { MetaDataContext } from "base/codeEditor/codeEditorTypes";
+import { MetaDataContext } from "fragments/codeEditor/codeEditorTypes";
 import { useMetaData } from "util/hooks";
 
 const children = {
@@ -99,11 +99,11 @@ function getMetaData(
 }
 
 const PropertyView = (props: {
-    comp: QueryLibraryCompType,
-    onPublish: () => void,
-    onHistoryShow: () => void,
-    setModify?: any
-    modify?: boolean
+  comp: QueryLibraryCompType,
+  onPublish: () => void,
+  onHistoryShow: () => void,
+  setModify?: any
+  modify?: boolean
 }) => {
   const { comp, onPublish, onHistoryShow, setModify, modify } = props;
 
@@ -159,15 +159,15 @@ const PropertyView = (props: {
                     CustomModal.confirm({
                       title: trans("queryLibrary.deleteQueryLabel"),
                       content: trans("queryLibrary.deleteQueryContent"),
-                      onConfirm: () =>{
+                      onConfirm: () => {
                         reduxDispatch(
                           deleteQueryLibrary({
                             queryLibraryId: comp.children.query.children.id.getView(),
                           })
                         )
-                          setTimeout(() => {
-                              setModify(!modify);
-                          }, 500);
+                        setTimeout(() => {
+                          setModify(!modify);
+                        }, 500);
                       },
                       confirmBtnType: "delete",
                       okText: trans("delete"),

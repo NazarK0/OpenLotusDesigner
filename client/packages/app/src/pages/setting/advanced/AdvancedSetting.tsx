@@ -30,8 +30,8 @@ import { NpmRegistryConfigEntry } from "@lowcoder-ee/redux/reducers/uiReducers/c
 import { default as Switch } from "antd/es/switch";
 
 const CodeEditor = lazy(
-  () => import("base/codeEditor/codeEditor")
-    .then(module => ({default: module.CodeEditor}))
+  () => import("fragments/codeEditor/codeEditor")
+    .then(module => ({ default: module.CodeEditor }))
 )
 
 const AdvancedSettingContent = styled.div`
@@ -180,7 +180,7 @@ export function AdvancedSetting() {
             allowClear={true}
             showSearch={true}
             style={{ width: "264px", height: "32px", marginBottom: 12 }}
-            styles={{ popup: { root: { width: "264px" }}}}
+            styles={{ popup: { root: { width: "264px" } } }}
             value={settings.defaultHomePage}
             onChange={(value: string) => {
               setSettings((v) => ({ ...v, defaultHomePage: value }));
@@ -206,8 +206,8 @@ export function AdvancedSetting() {
             style={{ marginBottom: 12 }}
             checked={
               settings.hasOwnProperty('showHeaderInPublicApps')
-              ? settings.showHeaderInPublicApps
-              : true
+                ? settings.showHeaderInPublicApps
+                : true
             }
             onChange={(value: boolean) => {
               setSettings((v) => ({ ...v, showHeaderInPublicApps: value }));
@@ -219,8 +219,8 @@ export function AdvancedSetting() {
             onClick={
               () => handleSave("showHeaderInPublicApps")(
                 settings.hasOwnProperty('showHeaderInPublicApps')
-                ? settings.showHeaderInPublicApps
-                : true
+                  ? settings.showHeaderInPublicApps
+                  : true
               )
             }
           >
@@ -322,7 +322,7 @@ export function AdvancedSetting() {
         <HelpText style={{ marginBottom: 12 }}>{trans("advanced.npmRegistryHelp")}</HelpText>
         <div className="section-content">
           <div>
-            <NpmRegistryConfig initialData={settings.npmRegistries?.at(0)} onSave={(config: NpmRegistryConfigEntry|null) => { 
+            <NpmRegistryConfig initialData={settings.npmRegistries?.at(0)} onSave={(config: NpmRegistryConfigEntry | null) => {
               // Wrap in array to enable future option for multiple registries
               if (config === null) {
                 handleSave("npmRegistries")([]);
@@ -336,7 +336,7 @@ export function AdvancedSetting() {
         <div className="section-title">{trans("advanced.APIConsumption")}</div>
         <HelpText style={{ marginBottom: 12 }}>{trans("advanced.APIConsumptionDescription")}</HelpText>
         <div className="section-content">
-          {trans("advanced.overallAPIConsumption")} : {apiUsage ? Intl.NumberFormat('en-GB', { maximumFractionDigits: 2 }).format(apiUsage) + " " + trans("enterprise.apiUsage") : trans("enterprise.loadingApiUsage")}<br/>
+          {trans("advanced.overallAPIConsumption")} : {apiUsage ? Intl.NumberFormat('en-GB', { maximumFractionDigits: 2 }).format(apiUsage) + " " + trans("enterprise.apiUsage") : trans("enterprise.loadingApiUsage")}<br />
           {trans("advanced.lastMonthAPIConsumption")} : {lastMonthApiUsage ? Intl.NumberFormat('en-GB', { maximumFractionDigits: 2 }).format(lastMonthApiUsage) + " " + trans("enterprise.apiUsage") : trans("enterprise.loadingApiUsage")}
         </div>
       </AdvancedSettingContent>

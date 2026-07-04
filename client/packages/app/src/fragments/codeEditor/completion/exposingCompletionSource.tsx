@@ -1,4 +1,4 @@
-import { AutocompleteDataType } from "base/codeEditor/completion/ternServer";
+import { AutocompleteDataType } from "fragments/codeEditor/completion/ternServer";
 import _ from "lodash";
 import { evalScript } from "lowcoder-core";
 import { checkCursorInBinding } from "../codeEditorUtils";
@@ -46,24 +46,24 @@ export class ExposingCompletionSource extends CompletionSource {
         boost: isBoost
           ? 20
           : PRIORITY_PROPS.includes(key)
-          ? 3
-          : PRIORITY_FUNCTIONS.includes(key)
-          ? 2
-          : 1,
+            ? 3
+            : PRIORITY_FUNCTIONS.includes(key)
+              ? 2
+              : 1,
         apply:
           offset === 0
             ? undefined
             : (view: EditorView, c: Completion, from: number, to: number) => {
-                view.dispatch({
-                  changes: {
-                    from: from - 1,
-                    to: to,
-                    insert: key.match(/^[A-Za-z_$][\w$]*$/)
-                      ? `.${key}`
-                      : `['${key.replace(/[\\']/g, (c) => "\\" + c)}']`,
-                  },
-                });
-              },
+              view.dispatch({
+                changes: {
+                  from: from - 1,
+                  to: to,
+                  insert: key.match(/^[A-Za-z_$][\w$]*$/)
+                    ? `.${key}`
+                    : `['${key.replace(/[\\']/g, (c) => "\\" + c)}']`,
+                },
+              });
+            },
       };
       return result;
     });

@@ -1,6 +1,6 @@
 import type { EditorState } from "@codemirror/state";
 import { isThemeColorKey } from "api/commonSettingApi";
-import type { Language } from "base/codeEditor/codeEditorTypes";
+import type { Language } from "fragments/codeEditor/codeEditorTypes";
 import { EditorContext } from "comps/editorState";
 import { withDefault } from "comps/generators/simpleGenerators";
 import { CompExposingContext } from "comps/generators/withContext";
@@ -57,8 +57,8 @@ import { toReadableString } from "util/stringUtils";
 import { ControlLayout, ControlParams } from "./controlParams";
 
 const CodeEditor = lazy(
-  () => import("base/codeEditor/codeEditor")
-    .then(module => ({default: module.CodeEditor}))
+  () => import("fragments/codeEditor/codeEditor")
+    .then(module => ({ default: module.CodeEditor }))
 )
 
 interface CodeControlParams<T> extends CodeNodeOptions {
@@ -310,8 +310,7 @@ function checkRange(
     return num;
   } else {
     throw new RangeError(
-      `Value must ${leftBoundType === "closed" ? ">=" : ">"} ${left} and ${
-        rightBoundType === "closed" ? "<=" : "<"
+      `Value must ${leftBoundType === "closed" ? ">=" : ">"} ${left} and ${rightBoundType === "closed" ? "<=" : "<"
       } ${right}. Current value: ${JSON.stringify(value)}`
     );
   }
@@ -436,7 +435,7 @@ export function stringUnionControl<T extends readonly string[]>(
 export const ColorCodeControl = codeControl<string>(
   (value: unknown) => {
     const valueString = toString(value);
-    
+
     if (valueString === "") {
       return valueString;
     }
@@ -522,7 +521,7 @@ export const FunctionControl = codeControl<CodeFunction>(
     if (typeof value === "function") {
       return value as CodeFunction;
     }
-    return () => {};
+    return () => { };
   },
   { codeType: "Function", evalWithMethods: true }
 );

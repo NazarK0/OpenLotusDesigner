@@ -1,5 +1,5 @@
-import type { EditorState, EditorView } from "base/codeEditor/codeMirror";
-import { iconRegexp, iconWidgetClass } from "base/codeEditor/extensions/iconExtension";
+import type { EditorState, EditorView } from "fragments/codeEditor/codeMirror";
+import { iconRegexp, iconWidgetClass } from "fragments/codeEditor/extensions/iconExtension";
 import { i18nObjs, trans } from "i18n";
 import {
   AbstractComp,
@@ -267,7 +267,7 @@ export class IconControl extends AbstractComp<ReactNode, string, Node<ValueAndMs
         { filterText: params.label },
         <Wrapper>
           <SwitchWrapper label={params.label} tooltip={params.tooltip} lastNode={jsContent} />
-          {this.useCodeEditor && <IconCodeEditor codeControl={this.codeControl} params={params}/>}
+          {this.useCodeEditor && <IconCodeEditor codeControl={this.codeControl} params={params} />}
         </Wrapper>
       );
     }

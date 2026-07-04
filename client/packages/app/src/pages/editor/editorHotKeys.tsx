@@ -11,7 +11,7 @@ import {
   ShortcutsWrapper,
 } from "util/keyUtils";
 import { PanelStatus, TogglePanel } from "pages/common/header";
-import { clickCompNameClass } from "base/codeEditor/clickCompName";
+import { clickCompNameClass } from "fragments/codeEditor/clickCompName";
 import { getShortcutAction } from "pages/common/shortcutConfigs";
 import { preview } from "constants/routesURL";
 import { useApplicationId } from "util/hooks";

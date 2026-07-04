@@ -1,4 +1,4 @@
-import type { CodeEditorControlParams } from "base/codeEditor/codeEditorTypes";
+import type { CodeEditorControlParams } from "fragments/codeEditor/codeEditorTypes";
 import { Comp } from "lowcoder-core";
 import { CSSProperties, ReactNode } from "react";
 
@@ -21,7 +21,7 @@ export interface ControlParams extends CodeEditorControlParams {
 }
 
 export interface ControlType {
-  new (params: any): Comp<any> & {
+  new(params: any): Comp<any> & {
     propertyView(props: ControlParams): ReactNode;
   };
 }

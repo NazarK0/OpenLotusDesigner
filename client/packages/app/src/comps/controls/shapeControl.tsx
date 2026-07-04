@@ -1,8 +1,8 @@
-import type { EditorState, EditorView } from "base/codeEditor/codeMirror";
+import type { EditorState, EditorView } from "fragments/codeEditor/codeMirror";
 import {
   iconRegexp,
   iconWidgetClass,
-} from "base/codeEditor/extensions/iconExtension";
+} from "fragments/codeEditor/extensions/iconExtension";
 import { i18nObjs, trans } from "i18n";
 import { Coolshape } from "coolshapes-react";
 import {

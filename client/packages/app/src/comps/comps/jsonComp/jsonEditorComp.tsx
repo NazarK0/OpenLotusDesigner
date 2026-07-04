@@ -17,8 +17,8 @@ import {
   EditorState,
   EditorView,
   type EditorView as EditorViewType,
-} from "base/codeEditor/codeMirror";
-import { useExtensions } from "base/codeEditor/extensions";
+} from "fragments/codeEditor/codeMirror";
+import { useExtensions } from "fragments/codeEditor/extensions";
 import { EditorContext } from "comps/editorState";
 import { AutoHeightControl } from "@lowcoder-ee/comps/controls/autoHeightControl";
 import { BoolControl } from "@lowcoder-ee/comps/controls/boolControl";
@@ -27,7 +27,7 @@ import { BoolControl } from "@lowcoder-ee/comps/controls/boolControl";
  * JsonEditor Comp
  */
 
-const Wrapper = styled.div<{$height: boolean; $showVerticalScrollbar: boolean}>`
+const Wrapper = styled.div<{ $height: boolean; $showVerticalScrollbar: boolean }>`
   background-color: #fff;
   border: 1px solid #d7d9e0;
   border-radius: 4px;
@@ -66,9 +66,9 @@ function fixOldDataSecond(oldData: any) {
 const childrenMap = {
   value: jsonValueExposingStateControl('value', defaultData),
   onEvent: ChangeEventHandlerControl,
-  autoHeight: withDefault(AutoHeightControl,'auto'),
+  autoHeight: withDefault(AutoHeightControl, 'auto'),
   showVerticalScrollbar: BoolControl,
-  label: withDefault(LabelControl, {position: 'column'}),
+  label: withDefault(LabelControl, { position: 'column' }),
   style: styleControl(JsonEditorStyle, 'style'),
   animationStyle: styleControl(AnimationStyle, 'animationStyle'),
   ...formDataChildren,
@@ -85,7 +85,7 @@ let JsonEditorTmpComp = (function () {
 
     const handleChange = useCallback((state: EditorState) => {
       if (!mountedRef.current) return;
-      
+
       editContentRef.current = state.doc.toString();
       try {
         const value = JSON.parse(state.doc.toString());
@@ -129,9 +129,9 @@ let JsonEditorTmpComp = (function () {
     // Create editor view
     useEffect(() => {
       if (stateRef.current && wrapperRef.current) {
-        viewRef.current = new EditorView({ 
-          state: stateRef.current, 
-          parent: wrapperRef.current 
+        viewRef.current = new EditorView({
+          state: stateRef.current,
+          parent: wrapperRef.current
         });
         initializedRef.current = true;
       }
@@ -203,7 +203,7 @@ let JsonEditorTmpComp = (function () {
 
           {!children.autoHeight.getView() && (
             <Section name={sectionNames.layout}>
-              {children.showVerticalScrollbar.propertyView({label: trans('prop.showVerticalScrollbar')})}
+              {children.showVerticalScrollbar.propertyView({ label: trans('prop.showVerticalScrollbar') })}
             </Section>
           )}
 

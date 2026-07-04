@@ -1,5 +1,5 @@
-import { checkCursorInBinding } from "base/codeEditor/codeEditorUtils";
-import { Completion, CompletionContext, CompletionResult } from "base/codeEditor/codeMirror";
+import { checkCursorInBinding } from "fragments/codeEditor/codeEditorUtils";
+import { Completion, CompletionContext, CompletionResult } from "fragments/codeEditor/codeMirror";
 import { CompletionsQuery, Def, Server } from "tern";
 import ecma from "./defs/ecmascript.json";
 import { CompletionSource } from "./completion";
@@ -95,8 +95,8 @@ export class TernServer extends CompletionSource {
           completion.doc === undefined
             ? undefined
             : (complete: Completion) => {
-                let dom = document.createElement("div");
-                dom.innerHTML = `
+              let dom = document.createElement("div");
+              dom.innerHTML = `
                   <div class="hintDiv" onclick='javascript:window.open("${completion.url}")' >
                     <svg width="16px" height="16px" class="hintSvg" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
@@ -111,8 +111,8 @@ export class TernServer extends CompletionSource {
                   <span class="hintType">${completion.type}</span>
                   <span class="hintDoc">${completion.doc}</span>
                   `;
-                return dom;
-              },
+              return dom;
+            },
         boost: -1,
       };
       options.push(completionOption);

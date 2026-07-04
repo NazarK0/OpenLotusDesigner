@@ -5,7 +5,7 @@ import { EmptyTab } from "./BottomTabs";
 import { CompNameContext, EditorContext } from "comps/editorState";
 import { BottomSidebar } from "./BottomSidebar";
 import { useSelector } from "react-redux";
-import { MetaDataContext } from "base/codeEditor/codeEditorTypes";
+import { MetaDataContext } from "fragments/codeEditor/codeEditorTypes";
 import { editorBottomClassName } from "pages/tutorials/tutorialsConstant";
 import BottomMetaDrawer from "./BottomMetaDrawer";
 import { BottomResComp, BottomResTypeEnum } from "types/bottomRes";
