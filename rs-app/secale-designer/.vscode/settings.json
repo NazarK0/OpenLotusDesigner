@@ -1,0 +1,9 @@
+{
+  "rust-analyzer.linkedProjects": [
+    "${workspaceFolder}/packages/api/Cargo.toml",
+    "${workspaceFolder}/packages/desktop/Cargo.toml",
+    "${workspaceFolder}/packages/mobile/Cargo.toml",
+    "${workspaceFolder}/packages/ui/Cargo.toml",
+    "${workspaceFolder}/packages/web/Cargo.toml"
+  ]
+}

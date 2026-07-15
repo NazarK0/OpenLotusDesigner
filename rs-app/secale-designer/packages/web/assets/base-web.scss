@@ -1,0 +1,19 @@
+body {
+  background-color: #0f1116;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+
+  a,
+    a:-webkit-any-link {
+      color: inherit; // Наслідувати колір від батьківського елемента (наприклад, від .main)
+      text-decoration: none; // Прибрати стандартне підкреслення
+      outline: none;
+    }
+
+    // Додатково можна скинути стилі для інпутів та кнопок
+    input,
+    button {
+      font-family: inherit;
+    }
+}

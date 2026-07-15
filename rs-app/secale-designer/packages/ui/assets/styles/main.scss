@@ -1,0 +1,31 @@
+// @import 'theme-light.scss';
+// @import 'theme-dark.scss';
+
+// Загальні базові стилі для всього застосунку
+:global {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+    margin: 0;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    a,
+    a:-webkit-any-link {
+      color: inherit; // Наслідувати колір від батьківського елемента (наприклад, від .main)
+      text-decoration: none; // Прибрати стандартне підкреслення
+      outline: none;
+    }
+
+    // Додатково можна скинути стилі для інпутів та кнопок
+    input,
+    button {
+      font-family: inherit;
+    }
+  }
+}
